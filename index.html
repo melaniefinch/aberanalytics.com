@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aber Analytics | Next-Gen Energy Advisory &amp; Modelling</title>
+    <meta name="description" content="Next-generation energy advisory and modelling tools. Built for applied decision-making with high transparency and low friction.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS Custom Properties ===== */
+        :root {
+            --deep-purple: #322155;
+            --purple: #52308B;
+            --light-purple: #B299DB;
+            --teal: #437F86;
+            --mint: #75CAAE;
+            --gold: #F6C958;
+            --coral: #D55268;
+            --white: #FFFFFF;
+            --off-white: #F8F7FC;
+            --text-dark: #1a1a2e;
+            --text-muted: #6b7280;
+            --purple-wash: rgba(82, 48, 139, 0.06);
+            --section-padding: clamp(4rem, 8vw, 8rem);
+        }
+
+        /* ===== Reset & Base ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img, svg { display: block; max-width: 100%; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 4vw, 3rem);
+        }
+
+        /* ===== Typography ===== */
+        h1, h2, h3, h4 {
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--purple);
+            margin-bottom: 1rem;
+        }
+
+        .section-label--light {
+            color: var(--light-purple);
+        }
+
+        .section-heading {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+        }
+
+        .section-subheading {
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+            color: var(--text-muted);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+
+        /* ===== Animations ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ===== Navigation ===== */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 0;
+            transition: all 0.35s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(50, 33, 85, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 0.75rem 0;
+            box-shadow: 0 1px 30px rgba(50, 33, 85, 0.2);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav__logo svg {
+            width: 36px;
+            height: 36px;
+        }
+
+        .nav__logo-text {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 0.06em;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 2.25rem;
+        }
+
+        .nav__link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.2s ease;
+        }
+
+        .nav__link:hover {
+            color: var(--white);
+        }
+
+        .nav__cta {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--white);
+            background: var(--purple);
+            padding: 0.6rem 1.5rem;
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.25s ease;
+        }
+
+        .nav__cta:hover {
+            background: var(--light-purple);
+            color: var(--deep-purple);
+        }
+
+        .nav__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav__hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(160deg, #2a1b47 0%, var(--deep-purple) 40%, #1e1440 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(82, 48, 139, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(67, 127, 134, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Subtle grid pattern */
+        .hero__grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
+        }
+
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            padding-top: 6rem;
+        }
+
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 100px;
+            padding: 0.4rem 1.1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--light-purple);
+            margin-bottom: 2rem;
+            backdrop-filter: blur(8px);
+        }
+
+        .hero__badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--mint);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--white);
+            max-width: 700px;
+            margin-bottom: 1.5rem;
+            line-height: 1.08;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--light-purple), var(--mint));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero__description {
+            font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 520px;
+            line-height: 1.75;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero__actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.85rem 2rem;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn--primary {
+            background: var(--white);
+            color: var(--deep-purple);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn--ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        .btn--purple {
+            background: var(--purple);
+            color: var(--white);
+        }
+
+        .btn--purple:hover {
+            background: #6339a8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(82, 48, 139, 0.35);
+        }
+
+        .btn__arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover .btn__arrow {
+            transform: translateX(3px);
+        }
+
+        .hero__backed {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero__backed-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.05em;
+        }
+
+        .hero__backed-logo {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.65);
+            letter-spacing: 0.04em;
+        }
+
+        /* ===== Problem Section ===== */
+        .problem {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+
+        .problem__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .problem__header .section-subheading {
+            margin: 0 auto;
+        }
+
+        .problem__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .problem__card {
+            position: relative;
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .problem__card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(50, 33, 85, 0.08);
+        }
+
+        .problem__card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+            background: var(--purple-wash);
+        }
+
+        .problem__card-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--purple);
+        }
+
+        .problem__card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .problem__card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ===== Platform / Solution Section ===== */
+        .platform {
+            padding: var(--section-padding) 0;
+            background: var(--off-white);
+        }
+
+        .platform__layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .platform__features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+
+        .platform__feature {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid rgba(82, 48, 139, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .platform__feature:hover {
+            border-color: var(--light-purple);
+            box-shadow: 0 8px 30px rgba(82, 48, 139, 0.08);
+        }
+
+        .platform__feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .platform__feature h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .platform__feature p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== Use Cases Section ===== */
+        .usecases {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+
+        .usecases__header {
+            margin-bottom: 3.5rem;
+        }
+
+        .usecases__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .usecases__card {
+            position: relative;
+            background: linear-gradient(160deg, var(--deep-purple) 0%, #3b2768 100%);
+            border-radius: 20px;
+            padding: 2.25rem 2rem;
+            color: var(--white);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .usecases__card:hover {
+            transform: translateY(-4px);
+        }
+
+        .usecases__card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(178, 153, 219, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .usecases__card-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--mint);
+            margin-bottom: 1.25rem;
+        }
+
+        .usecases__card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .usecases__card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.65;
+        }
+
+        .usecases__card-accent {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        /* ===== Services Section ===== */
+        .services {
+            padding: var(--section-padding) 0;
+            background: var(--off-white);
+        }
+
+        .services__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services__header .section-subheading {
+            margin: 0 auto;
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .services__card {
+            position: relative;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(82, 48, 139, 0.08);
+            transition: all 0.35s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .services__card:hover {
+            border-color: var(--purple);
+            box-shadow: 0 16px 50px rgba(82, 48, 139, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .services__card--featured {
+            background: linear-gradient(160deg, var(--deep-purple), #3b2768);
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .services__card--featured:hover {
+            border-color: transparent;
+            box-shadow: 0 16px 60px rgba(50, 33, 85, 0.3);
+        }
+
+        .services__card-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+
+        .services__card-badge--advisory {
+            background: rgba(82, 48, 139, 0.1);
+            color: var(--purple);
+        }
+
+        .services__card-badge--access {
+            background: rgba(117, 202, 174, 0.2);
+            color: var(--mint);
+        }
+
+        .services__card-badge--adapt {
+            background: rgba(67, 127, 134, 0.1);
+            color: var(--teal);
+        }
+
+        .services__card h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .services__card-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .services__card--featured .services__card-subtitle {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .services__card ul {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .services__card li {
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            padding-left: 1.4rem;
+            margin-bottom: 0.6rem;
+            line-height: 1.55;
+        }
+
+        .services__card--featured li {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .services__card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--light-purple);
+        }
+
+        .services__card--featured li::before {
+            background: var(--mint);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta {
+            padding: var(--section-padding) 0;
+            background: var(--white);
+        }
+
+        .cta__inner {
+            background: linear-gradient(160deg, var(--deep-purple), #3b2768);
+            border-radius: 24px;
+            padding: clamp(3rem, 6vw, 5rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta__inner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 150%;
+            background: radial-gradient(ellipse, rgba(117, 202, 174, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta__inner h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta__inner p {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .cta__actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .cta__bullets {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .cta__bullet {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .cta__bullet svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--mint);
+            flex-shrink: 0;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            padding: 3rem 0;
+            background: var(--deep-purple);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer__left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .footer__left svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .footer__left span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            letter-spacing: 0.04em;
+        }
+
+        .footer__right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer__backed {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        .footer__backed-name {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer__copy {
+            font-size: 0.8rem;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 1024px) {
+            .platform__layout {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav__links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(50, 33, 85, 0.98);
+                backdrop-filter: blur(16px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                z-index: 999;
+            }
+
+            .nav__links.open {
+                display: flex;
+            }
+
+            .nav__links.open .nav__link {
+                font-size: 1.2rem;
+            }
+
+            .nav__hamburger {
+                display: flex;
+                z-index: 1001;
+            }
+
+            .nav__hamburger.open span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .nav__hamburger.open span:nth-child(2) {
+                opacity: 0;
+            }
+            .nav__hamburger.open span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+
+            .problem__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .usecases__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer__right {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .problem__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .platform__features {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cta__bullets {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Navigation ===== -->
+    <nav class="nav" id="nav">
+        <div class="container nav__inner">
+            <a href="#" class="nav__logo">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2.2"/>
+                    <path d="M8 26 C14 10, 26 10, 32 26" stroke="white" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    <path d="M10 16 C16 32, 28 32, 34 16" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+                    <line x1="6" y1="21" x2="34" y2="21" stroke="white" stroke-width="1.5" opacity="0.4"/>
+                </svg>
+                <span class="nav__logo-text">ABER ANALYTICS</span>
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="#platform" class="nav__link">Platform</a>
+                <a href="#usecases" class="nav__link">Use Cases</a>
+                <a href="#services" class="nav__link">Services</a>
+                <a href="#contact" class="nav__cta">Get in Touch</a>
+            </div>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="hero">
+        <div class="hero__grid"></div>
+        <div class="container hero__content">
+            <div class="hero__badge reveal">
+                <span class="hero__badge-dot"></span>
+                Now accepting foundational partners
+            </div>
+            <h1 class="reveal reveal-delay-1">
+                Next-gen energy<br><span class="gradient-text">advisory &amp; modelling</span>
+            </h1>
+            <p class="hero__description reveal reveal-delay-2">
+                Transparent, customisable market models built for applied commercial decision-making in the energy transition.
+            </p>
+            <div class="hero__actions reveal reveal-delay-3">
+                <a href="#contact" class="btn btn--primary">
+                    Book a Demo
+                    <svg class="btn__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#platform" class="btn btn--ghost">Learn More</a>
+            </div>
+            <div class="hero__backed reveal reveal-delay-4">
+                <span class="hero__backed-label">Backed by</span>
+                <span class="hero__backed-logo">BROKEN BAY ASSOCIATES</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Problem Section ===== -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="problem__header">
+                <span class="section-label reveal">The Challenge</span>
+                <h2 class="section-heading reveal reveal-delay-1">Strong commercial decisions require<br>robust market understanding</h2>
+                <p class="section-subheading reveal reveal-delay-2">
+                    Existing offerings make it difficult to get the level of insight needed to navigate the energy transition with confidence.
+                </p>
+            </div>
+            <div class="problem__grid">
+                <div class="problem__card reveal">
+                    <div class="problem__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/><path d="M13 13h4v4h-4z" opacity="0.4"/></svg>
+                    </div>
+                    <h3>Black Box</h3>
+                    <p>Can't interrogate detailed assumptions and outputs or use results to robustly understand market dynamics.</p>
+                </div>
+                <div class="problem__card reveal reveal-delay-1">
+                    <div class="problem__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                    </div>
+                    <h3>Uncustomisable</h3>
+                    <p>Advice based on set scenarios that become stale as new information emerges. Costly to update or iterate.</p>
+                </div>
+                <div class="problem__card reveal reveal-delay-2">
+                    <div class="problem__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    </div>
+                    <h3>Long Iteration</h3>
+                    <p>Iteration cycles are transactional and take weeks, limiting how far analysis can go.</p>
+                </div>
+                <div class="problem__card reveal reveal-delay-3">
+                    <div class="problem__card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <h3>Missing Key Dynamics</h3>
+                    <p>Inadequate treatment of cross-market dynamics and range of possible outcomes. Three scenarios is not enough.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Platform Section ===== -->
+    <section class="platform" id="platform">
+        <div class="container">
+            <div class="platform__layout">
+                <div>
+                    <span class="section-label reveal">Our Platform</span>
+                    <h2 class="section-heading reveal reveal-delay-1">A platform that's different</h2>
+                    <p class="section-subheading reveal reveal-delay-2" style="margin-bottom: 0;">
+                        We've built energy market models from the ground up, designed for the questions that actually drive commercial decisions.
+                    </p>
+                </div>
+                <div class="platform__features">
+                    <div class="platform__feature reveal">
+                        <div class="platform__feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                        </div>
+                        <h3>Applied Decision-Making</h3>
+                        <p>Risk-adjusted commercial choices. Spot asymmetric risk/reward trade-offs.</p>
+                    </div>
+                    <div class="platform__feature reveal reveal-delay-1">
+                        <div class="platform__feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        </div>
+                        <h3>High Transparency</h3>
+                        <p>Flexible and visible industry-leading inputs. Models you can run and interrogate yourself.</p>
+                    </div>
+                    <div class="platform__feature reveal reveal-delay-2">
+                        <div class="platform__feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <h3>Complexity Where It Matters</h3>
+                        <p>Gas/power integration, system shocks, and weather variation built in by default.</p>
+                    </div>
+                    <div class="platform__feature reveal reveal-delay-3">
+                        <div class="platform__feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3>Leading Research</h3>
+                        <p>Continuous investment into proprietary inputs, use cases, and interfaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Use Cases Section ===== -->
+    <section class="usecases" id="usecases">
+        <div class="container">
+            <div class="usecases__header">
+                <span class="section-label reveal">Proven Applications</span>
+                <h2 class="section-heading reveal reveal-delay-1">What our platform has been used for</h2>
+            </div>
+            <div class="usecases__grid">
+                <div class="usecases__card reveal">
+                    <span class="usecases__card-number">01</span>
+                    <h3>Asset Revenue Modelling</h3>
+                    <p>Model the risk-adjusted returns of energy assets, including co-located load and storage optimisation strategies.</p>
+                    <div class="usecases__card-accent" style="background: linear-gradient(90deg, var(--purple), var(--light-purple));"></div>
+                </div>
+                <div class="usecases__card reveal reveal-delay-1">
+                    <span class="usecases__card-number">02</span>
+                    <h3>Gas &amp; Power Market Risk</h3>
+                    <p>Understand the risks and implications of gas supply dynamics on the power market, across a full range of scenarios.</p>
+                    <div class="usecases__card-accent" style="background: linear-gradient(90deg, var(--teal), var(--mint));"></div>
+                </div>
+                <div class="usecases__card reveal reveal-delay-2">
+                    <span class="usecases__card-number">03</span>
+                    <h3>Global Energy Economics</h3>
+                    <p>Predict comparative global energy economics and system costs across different decarbonisation pathways.</p>
+                    <div class="usecases__card-accent" style="background: linear-gradient(90deg, var(--gold), #f5d98a);"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Services Section ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services__header">
+                <span class="section-label reveal">How We Work</span>
+                <h2 class="section-heading reveal reveal-delay-1">Three modes of engagement</h2>
+                <p class="section-subheading reveal reveal-delay-2">
+                    Flexible structures to match your team's needs, from full-service advisory to direct model access.
+                </p>
+            </div>
+            <div class="services__grid">
+                <div class="services__card reveal">
+                    <span class="services__card-badge services__card-badge--advisory">Advisory</span>
+                    <h3>We answer a question with you</h3>
+                    <p class="services__card-subtitle">Full-service analytical advisory</p>
+                    <ul>
+                        <li>Problem structuring, expert inputs, analysis and synthesis</li>
+                        <li>Your team accesses full results via our platform during the project</li>
+                        <li>Highly collaborative, transparent model</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--purple" style="font-size:0.85rem; padding:0.7rem 1.5rem; width:fit-content;">
+                        Enquire
+                        <svg class="btn__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+                <div class="services__card services__card--featured reveal reveal-delay-1">
+                    <span class="services__card-badge services__card-badge--access">Model Access</span>
+                    <h3>Get answers yourself</h3>
+                    <p class="services__card-subtitle">Direct access to our models</p>
+                    <ul>
+                        <li>Access all models, standard scenarios, and output visualisation</li>
+                        <li>Unlimited users with up to 5,000 runs</li>
+                        <li>Training session and dedicated support contact</li>
+                        <li>Trial access available</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary" style="font-size:0.85rem; padding:0.7rem 1.5rem; width:fit-content;">
+                        Start a Trial
+                        <svg class="btn__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+                <div class="services__card reveal reveal-delay-2">
+                    <span class="services__card-badge services__card-badge--adapt">Adaptation</span>
+                    <h3>Bespoke models built for you</h3>
+                    <p class="services__card-subtitle">Custom dashboards &amp; optimisation models</p>
+                    <ul>
+                        <li>Scoping, design, development and handover</li>
+                        <li>Custom models or interfaces for specific use cases</li>
+                        <li>Built for enduring use by your team</li>
+                    </ul>
+                    <a href="#contact" class="btn btn--purple" style="font-size:0.85rem; padding:0.7rem 1.5rem; width:fit-content;">
+                        Discuss a Build
+                        <svg class="btn__arrow" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta__inner reveal">
+                <h2>Ready to see what's possible?</h2>
+                <p>Reach out to set up a demo, or learn more about how our platform can support your team's decisions.</p>
+                <div class="cta__bullets">
+                    <span class="cta__bullet">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Tailored insight for your use case
+                    </span>
+                    <span class="cta__bullet">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Flexible engagement levels
+                    </span>
+                    <span class="cta__bullet">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        Under-the-hood transparency
+                    </span>
+                </div>
+                <div class="cta__actions">
+                    <a href="mailto:hello@aberanalytics.com" class="btn btn--primary">
+                        Get in Touch
+                        <svg class="btn__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="mailto:hello@aberanalytics.com" class="btn btn--ghost">hello@aberanalytics.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <path d="M8 26 C14 10, 26 10, 32 26" stroke="rgba(255,255,255,0.5)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                    <path d="M10 16 C16 32, 28 32, 34 16" stroke="rgba(255,255,255,0.3)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                    <line x1="6" y1="21" x2="34" y2="21" stroke="rgba(255,255,255,0.2)" stroke-width="1.5"/>
+                </svg>
+                <span>ABER ANALYTICS</span>
+            </div>
+            <div class="footer__right">
+                <div class="footer__backed">
+                    <span>Backed by</span>
+                    <span class="footer__backed-name">Broken Bay Associates</span>
+                </div>
+                <span class="footer__copy">&copy; 2026 Aber Analytics. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== Scripts ===== -->
+    <script>
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Nav scroll effect
+        const nav = document.getElementById('nav');
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        }, { passive: true });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('.nav__link, .nav__cta').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
