@@ -511,6 +511,87 @@
             line-height: 1.6;
         }
 
+        /* ===== Outcomes / Fan Chart Section ===== */
+        .outcomes {
+            padding: var(--section-padding) 0;
+            background: linear-gradient(160deg, #251848 0%, var(--deep-purple) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .outcomes::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -10%;
+            width: 50%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(67,127,134,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .outcomes__layout {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .outcomes__desc {
+            font-size: clamp(0.95rem, 1.3vw, 1.05rem);
+            color: rgba(255,255,255,0.68);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 420px;
+        }
+
+        .outcomes__bullets {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .outcomes__bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.82);
+        }
+
+        .outcomes__bullets li svg {
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .outcomes__chart-wrap {
+            position: relative;
+        }
+
+        .outcomes__chart-title {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 0.75rem;
+        }
+
+        .outcomes__canvas {
+            display: block;
+            width: 100%;
+            height: 300px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.25);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        @media (max-width: 900px) {
+            .outcomes__layout { grid-template-columns: 1fr; gap: 2.5rem; }
+            .outcomes__canvas { height: 230px; }
+        }
+
         /* ===== Use Cases Section ===== */
         .usecases {
             padding: var(--section-padding) 0;
@@ -1068,6 +1149,39 @@
         </div>
     </section>
 
+    <!-- ===== Outcomes Section ===== -->
+    <section class="outcomes" id="outcomes">
+        <div class="container">
+            <div class="outcomes__layout">
+                <div class="outcomes__text">
+                    <span class="section-label section-label--light reveal">The Difference</span>
+                    <h2 class="section-heading reveal reveal-delay-1" style="color:var(--white);">500 simulations.<br>Not 3 scenarios.</h2>
+                    <p class="outcomes__desc reveal reveal-delay-2">
+                        Existing tools give you a base case and two sensitivities. Our platform runs hundreds of simulations by default — revealing the full distribution of possible outcomes, including the tails that matter most for commercial decisions.
+                    </p>
+                    <ul class="outcomes__bullets">
+                        <li class="reveal reveal-delay-2">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            See P10, P50 and P90 outcomes as standard
+                        </li>
+                        <li class="reveal reveal-delay-3">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Gas and power integrated, not siloed
+                        </li>
+                        <li class="reveal reveal-delay-4">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--mint)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            Refresh your view as market conditions evolve
+                        </li>
+                    </ul>
+                </div>
+                <div class="outcomes__chart-wrap reveal reveal-delay-1">
+                    <p class="outcomes__chart-title">Wholesale price — distribution of outcomes across 500 simulations</p>
+                    <canvas class="outcomes__canvas" id="fanChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== Use Cases Section ===== -->
     <section class="usecases" id="usecases">
         <div class="container">
@@ -1177,11 +1291,11 @@
                     </span>
                 </div>
                 <div class="cta__actions">
-                    <a href="mailto:hello@aberanalytics.com" class="btn btn--primary">
+                    <a href="mailto:info@aberanalytics.com" class="btn btn--primary">
                         Get in Touch
                         <svg class="btn__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="mailto:hello@aberanalytics.com" class="btn btn--ghost">hello@aberanalytics.com</a>
+                    <a href="mailto:info@aberanalytics.com" class="btn btn--ghost">info@aberanalytics.com</a>
                 </div>
             </div>
         </div>
@@ -1243,6 +1357,182 @@
                 navLinks.classList.remove('open');
             });
         });
+
+        // ===== Fan Chart (Outcomes Section) =====
+        (function () {
+            const canvas = document.getElementById('fanChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            const N        = 100;
+            const STEPS    = 60;
+            const DURATION = 2200;
+            const ML = 14, MR = 48, MT = 16, MB = 44;
+
+            let lines = [], startTime = null, rafId = null, hasAnimated = false;
+
+            function chartArea() {
+                const cw = canvas.width, ch = canvas.height;
+                return { w: cw - ML - MR, h: ch - MT - MB, ox: ML, oy: MT + (ch - MT - MB) / 2 };
+            }
+
+            function buildLines() {
+                const { w, h, ox, oy } = chartArea();
+                lines = [];
+                for (let i = 0; i < N; i++) {
+                    const level = (i / (N - 1)) * 2 - 1;
+                    const pct   = Math.round((i / (N - 1)) * 100);
+                    const pts   = [{ x: ox, y: oy }];
+                    let noise = 0, y = oy;
+
+                    for (let s = 1; s <= STEPS; s++) {
+                        const t      = s / STEPS;
+                        const spread = h * 0.43 * Math.pow(t, 0.60);
+                        noise += (Math.random() - 0.5) * spread * 0.052;
+                        noise *= 0.89;
+                        y = oy + level * spread + noise;
+                        pts.push({ x: ox + w * t, y });
+                    }
+
+                    let color, opacity, lw;
+                    const al = Math.abs(level);
+                    if      (al < 0.04) { color = '#FFFFFF';  opacity = 0.95; lw = 2.2; }
+                    else if (al < 0.14) { color = '#B299DB';  opacity = 0.60; lw = 1.2; }
+                    else if (al < 0.30) { color = '#52308B';  opacity = 0.42; lw = 0.85; }
+                    else if (al < 0.52) { color = '#437F86';  opacity = 0.30; lw = 0.65; }
+                    else if (al < 0.74) { color = '#75CAAE';  opacity = 0.18; lw = 0.50; }
+                    else                { color = '#B299DB';  opacity = 0.09; lw = 0.38; }
+
+                    if (pct === 10 || pct === 90) { color = '#F6C958'; opacity = 0.80; lw = 1.8; }
+                    if (pct === 25 || pct === 75) { color = '#75CAAE'; opacity = 0.62; lw = 1.3; }
+
+                    lines.push({ pts, color, opacity, lw, level, pct,
+                                 delay: (Math.abs(level)) * 0.40 });
+                }
+                // Draw outer (faint) lines first so P50 renders on top
+                lines.sort((a, b) => Math.abs(b.level) - Math.abs(a.level));
+            }
+
+            function drawAxes() {
+                const { w, h, ox, oy } = chartArea();
+                const bottom = MT + h, right = ox + w;
+
+                ctx.globalAlpha  = 1;
+                ctx.beginPath();
+                ctx.moveTo(ox, bottom); ctx.lineTo(right, bottom);
+                ctx.strokeStyle = 'rgba(255,255,255,0.18)';
+                ctx.lineWidth   = 1;
+                ctx.stroke();
+
+                // Horizontal centre guide
+                ctx.beginPath();
+                ctx.setLineDash([4, 6]);
+                ctx.moveTo(ox, oy); ctx.lineTo(right, oy);
+                ctx.strokeStyle = 'rgba(255,255,255,0.10)';
+                ctx.lineWidth   = 1;
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Year labels
+                ctx.fillStyle  = 'rgba(255,255,255,0.40)';
+                ctx.font       = '11px Inter, sans-serif';
+                ctx.textAlign  = 'center';
+                const years = [2025, 2027, 2029, 2031, 2033];
+                years.forEach((yr, i) => {
+                    ctx.fillText(yr, ox + w * i / (years.length - 1), bottom + 16);
+                });
+
+                // Y-axis label
+                ctx.save();
+                ctx.translate(4, MT + h / 2);
+                ctx.rotate(-Math.PI / 2);
+                ctx.textAlign  = 'center';
+                ctx.fillStyle  = 'rgba(255,255,255,0.28)';
+                ctx.font       = '10px Inter, sans-serif';
+                ctx.fillText('$/MWh', 0, 0);
+                ctx.restore();
+            }
+
+            function drawPercentileLabels() {
+                const { w, ox } = chartArea();
+                const right = ox + w;
+                ctx.font      = '700 11px Inter, sans-serif';
+                ctx.textAlign = 'left';
+                ctx.globalAlpha = 1;
+                [10, 50, 90].forEach(pct => {
+                    const line = lines.find(l => l.pct === pct);
+                    if (!line) return;
+                    const last = line.pts[line.pts.length - 1];
+                    ctx.fillStyle = pct === 50  ? 'rgba(255,255,255,0.90)' :
+                                    pct === 10  ? 'rgba(246,201,88,0.85)'  :
+                                                  'rgba(246,201,88,0.85)';
+                    ctx.fillText(`P${pct}`, right + 6, last.y + 4);
+                });
+            }
+
+            function drawFrame(ts) {
+                if (!startTime) startTime = ts;
+                const overall = Math.min((ts - startTime) / DURATION, 1);
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                drawAxes();
+
+                for (const line of lines) {
+                    const t   = Math.max(0, Math.min(1, (overall - line.delay) / (1 - line.delay)));
+                    if (t <= 0) continue;
+                    const end = Math.max(2, Math.floor(line.pts.length * t));
+
+                    ctx.beginPath();
+                    ctx.moveTo(line.pts[0].x, line.pts[0].y);
+                    for (let i = 1; i < end; i++) ctx.lineTo(line.pts[i].x, line.pts[i].y);
+                    ctx.strokeStyle = line.color;
+                    ctx.globalAlpha = line.opacity;
+                    ctx.lineWidth   = line.lw;
+                    ctx.stroke();
+                }
+
+                if (overall >= 1) drawPercentileLabels();
+                ctx.globalAlpha = 1;
+                if (overall < 1) rafId = requestAnimationFrame(drawFrame);
+            }
+
+            function resize() {
+                canvas.width  = canvas.offsetWidth  * (window.devicePixelRatio || 1);
+                canvas.height = canvas.offsetHeight * (window.devicePixelRatio || 1);
+                ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+                canvas.style.width  = canvas.offsetWidth  + 'px';
+                canvas.style.height = canvas.offsetHeight + 'px';
+                buildLines();
+                if (hasAnimated) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    drawAxes();
+                    for (const l of lines) {
+                        ctx.beginPath();
+                        ctx.moveTo(l.pts[0].x, l.pts[0].y);
+                        for (let i = 1; i < l.pts.length; i++) ctx.lineTo(l.pts[i].x, l.pts[i].y);
+                        ctx.strokeStyle = l.color; ctx.globalAlpha = l.opacity; ctx.lineWidth = l.lw;
+                        ctx.stroke();
+                    }
+                    drawPercentileLabels();
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            // Trigger on scroll into view
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    startTime   = null;
+                    if (rafId) cancelAnimationFrame(rafId);
+                    rafId = requestAnimationFrame(drawFrame);
+                    io.disconnect();
+                }
+            }, { threshold: 0.25 });
+            io.observe(canvas);
+
+            window.addEventListener('resize', () => { resize(); });
+            setTimeout(resize, 0);
+        })();
 
         // ===== Scenario Fan Animation =====
         (function() {
