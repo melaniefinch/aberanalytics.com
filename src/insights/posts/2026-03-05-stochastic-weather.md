@@ -31,7 +31,7 @@ Our approach generated 500 synthetic but physically realistic scenarios using a 
   <span class="chart-legend-item"><span class="chart-dot" style="background:#5a7fa8"></span>Wind asset (SA)</span>
 </div>
 
-<div class="chart-pair">
+<div class="chart-pair chart-pair--horizontal">
   <img src="/assets/images/stochastic-weather/Chart1a.png" alt="Generation and price spread by simulation">
   <img src="/assets/images/stochastic-weather/Chart1b.png" alt="Distribution of revenue">
 </div>

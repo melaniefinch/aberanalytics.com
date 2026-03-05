@@ -9,15 +9,15 @@ toc: true
 tags: ["insights"]
 ---
 
-Today's system has roughly enough dispatchable thermal capacity to meet demand, providing reassurance that the lights won't go off if the sun stops shining or the wind stops blowing. With coal retirements incoming, firm capacity is being redefined. The shift from thermal to storage-backed VRE changes which risks matter most for system reliability.
+Today's system has roughly enough dispatchable thermal capacity to meet demand, providing reassurance that the lights won't go off if the sun stops shining or the wind stops blowing. With coal retirements incoming, firm capacity is being redefined.
 
-With an increasing gap between traditional firming technologies and peak demand, the way we think about firm reserve capacity is going to change:
+An increasing gap between traditional firming technologies and peak demand will change which risks matter most for system reliability. Firm capacity will:
 
-**It will depend more on weather variability.** With increasing renewable penetration and higher reliance on storage, understanding weather variability becomes critical for assessing system reliability.
+**Depend more on weather variability.** With increasing renewable penetration and higher reliance on storage, understanding weather variability becomes critical for assessing system reliability.
 
-**It will rely more on storage market behaviour.** Batteries and pumped hydro will provide a growing share of firm capacity. Whether storage is available when the system needs it depends on efficient market signals, reliable forecasting, and sufficient reserve depth.
+**Rely more on storage market behaviour.** Batteries and pumped hydro will provide a growing share of firm capacity. Whether storage is available when the system needs it depends on efficient market signals, reliable forecasting, and sufficient reserve depth.
 
-**It will lean more on interconnectors.** States like SA are projected to require more and more firming across interconnectors, a dependency that carries risk during coincident stress events.
+**Lean more on interconnectors.** States like SA are projected to require more and more firming across interconnectors, a dependency that carries risk during coincident stress events.
 
 To demonstrate this, we have used load duration curves to interrogate AEMO's 2026 ISP, comparing today's thermal-anchored system with the storage-and-VRE system projected for 2040. [Explore the extended dataset](#dashboard) in the interactive dashboard below.
 <div class="callout">
@@ -102,7 +102,7 @@ Use the interactive dashboard to explore load duration curves for any NEM state,
 
 ---
 
-## Methodology
+## References and methodology
 
 **[1] Thermal outage derating.** Coal and gas capacity is derated by a flat 10% forced outage rate, applied uniformly across all thermal technologies.
 
