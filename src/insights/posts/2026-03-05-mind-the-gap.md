@@ -99,7 +99,7 @@ To demonstrate this, we have used load duration curves to interrogate AEMO's 202
 Use the interactive dashboard to explore load duration curves for any NEM state, scenario, and financial year. Toggle firm contribution adjustments and compare how the capacity stack evolves over time.
 
 <div class="chart-embed" id="dashboard">
-  <iframe src="http://ldc.will.bba.internal" style="width:100%;height:750px;border:none;border-radius:4px;"></iframe>
+  <iframe src="http://ldc.will.bba.internal" style="width:100%;height:880px;border:none;border-radius:4px;"></iframe>
 </div>
 
 ---

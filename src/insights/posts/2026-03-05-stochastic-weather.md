@@ -12,10 +12,10 @@ tags: ["insights"]
 <div class="callout">
 <h4>Key takeaways</h4>
 <ul>
+<li>Traditional reference-year modelling will not capture the full range of plausible weather conditions, leaving tail risks unquantified.</li>
+<li>A stochastic approach reveals the full distribution of revenue outcomes, enabling more informed decisions on asset selection, project financing, and portfolio construction.</li>
 <li>Wind revenue is significantly more variable than solar across a set of simulated scenarios, reflecting the greater day-to-day unpredictability of wind resources.</li>
 <li>Within each technology, individual asset outcomes vary substantially depending on location and resource quality.</li>
-<li>Traditional reference-year modelling may not capture the full range of plausible weather conditions, leaving tail risks unquantified.</li>
-<li>A stochastic approach reveals the full distribution of revenue outcomes, enabling more informed decisions on asset selection, project financing, and portfolio construction.</li>
 </ul>
 </div>
 
