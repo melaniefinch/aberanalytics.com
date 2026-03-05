@@ -1,5 +1,5 @@
 ---
-title: "Mind the gap: Redefining firm capacity"
+title: "Mind the gap: redefining firm capacity"
 date: 2026-03-05
 author: "Aber Analytics"
 category: "Market Analysis"
@@ -60,7 +60,7 @@ The charts below compare New South Wales and South Australia — two states that
 
 ---
 
-## New South Wales: The Storage State
+## New South Wales: The storage state
 
 <div class="chart-pair">
   <figure class="chart-frame">
@@ -79,7 +79,7 @@ The charts below compare New South Wales and South Australia — two states that
 
 ---
 
-## South Australia: The Firming Gap
+## South Australia: The firming gap
 
 <div class="chart-pair">
   <figure class="chart-frame">

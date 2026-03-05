@@ -1,5 +1,5 @@
 ---
-title: "Under the weather: Stochastic variance in VRE returns"
+title: "Under the weather: stochastic variance in VRE returns"
 date: 2026-03-05
 author: "Aber Analytics"
 category: "Methodology"
