@@ -1,0 +1,14 @@
+{
+  "name": "aberanalytics-website",
+  "version": "1.0.0",
+  "description": "Aber Analytics marketing website",
+  "type": "module",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve --port=8080",
+    "build": "npx @11ty/eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it-anchor": "^9.0.0"
+  }
+}

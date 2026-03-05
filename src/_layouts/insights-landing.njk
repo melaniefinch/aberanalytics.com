@@ -1,0 +1,55 @@
+---
+layout: base.njk
+extraCss:
+  - /assets/css/insights.css
+---
+
+<section class="insights-hero">
+    <div class="container">
+        <span class="section-label section-label--light reveal">Insights</span>
+        <h1 class="section-heading reveal reveal-delay-1" style="color: var(--white);">Analysis, research &amp; perspectives</h1>
+        <p class="section-subheading reveal reveal-delay-2" style="color: rgba(255,255,255,0.7);">
+            Deep dives into energy market dynamics, modelling methodology, and emerging trends.
+        </p>
+    </div>
+</section>
+
+<section class="insights-listing">
+    <div class="container">
+        {% set categories = collections.insights | mapProp("category") | unique %}
+        {% if categories.length > 0 %}
+        <div class="insights-filters reveal" id="insightFilters">
+            <button class="insights-filter active" data-category="all">All</button>
+            {% for cat in categories %}
+            <button class="insights-filter" data-category="{{ cat }}">{{ cat }}</button>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="insights-grid">
+            {% for post in collections.insights %}
+            <a href="{{ post.url }}" class="insights-card reveal" data-category="{{ post.data.category }}">
+                {% if post.data.thumbnail %}
+                <div class="insights-card__thumb" style="background-image: url('{{ post.data.thumbnail }}')"></div>
+                {% else %}
+                <div class="insights-card__thumb insights-card__thumb--default"></div>
+                {% endif %}
+                <div class="insights-card__body">
+                    <span class="insights-card__category">{{ post.data.category }}</span>
+                    <h3 class="insights-card__title">{{ post.data.title }}</h3>
+                    <p class="insights-card__excerpt">{{ post.data.excerpt }}</p>
+                    <time class="insights-card__date">{{ post.date | readableDate }}</time>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        {% if collections.insights.length == 0 %}
+        <div class="insights-empty">
+            <p>New insights coming soon.</p>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<script src="/assets/js/insights-filter.js"></script>

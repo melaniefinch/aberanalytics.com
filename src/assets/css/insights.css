@@ -1,0 +1,146 @@
+/* ===== Insights Landing Page ===== */
+
+.insights-hero {
+    padding: calc(6rem + var(--section-padding)) 0 var(--section-padding);
+    background: linear-gradient(160deg, #2a1b47 0%, var(--deep-purple) 40%, #1e1440 100%);
+    color: var(--white);
+}
+
+/* ===== Filter Pills ===== */
+.insights-filters {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.insights-filter {
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid rgba(82, 48, 139, 0.15);
+    background: var(--white);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.insights-filter:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+.insights-filter.active {
+    background: var(--purple);
+    color: var(--white);
+    border-color: var(--purple);
+}
+
+/* ===== Card Grid ===== */
+.insights-listing {
+    padding: var(--section-padding) 0;
+    background: var(--off-white);
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.insights-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(82, 48, 139, 0.08);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+.insights-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 50px rgba(82, 48, 139, 0.1);
+    border-color: var(--purple);
+}
+
+.insights-card.hidden {
+    display: none;
+}
+
+.insights-card__thumb {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.insights-card__thumb--default {
+    background: linear-gradient(160deg, var(--deep-purple) 0%, #3b2768 60%, var(--teal) 100%);
+}
+
+.insights-card__body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.insights-card__category {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--purple);
+    background: var(--purple-wash);
+    padding: 0.25rem 0.6rem;
+    border-radius: 100px;
+    width: fit-content;
+    margin-bottom: 0.75rem;
+}
+
+.insights-card__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.insights-card__excerpt {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex-grow: 1;
+}
+
+.insights-card__date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+}
+
+/* ===== Empty State ===== */
+.insights-empty {
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}

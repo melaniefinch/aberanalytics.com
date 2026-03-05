@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "partials/head.njk" %}
+    {% for css in extraCss %}
+    <link rel="stylesheet" href="{{ css }}">
+    {% endfor %}
+</head>
+<body>
+    {% include "partials/nav.njk" %}
+    {{ content | safe }}
+    {% include "partials/footer.njk" %}
+    <script src="/assets/js/main.js"></script>
+    {% for script in extraScripts %}
+    <script src="{{ script }}"></script>
+    {% endfor %}
+    {% if extraHead %}{{ extraHead | safe }}{% endif %}
+</body>
+</html>

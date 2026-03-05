@@ -1,0 +1,38 @@
+---
+layout: base.njk
+extraCss:
+  - /assets/css/article.css
+---
+
+<article class="article">
+    <header class="article__header">
+        <div class="container">
+            <a href="/insights/" class="article__back reveal">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Back to Insights
+            </a>
+            <span class="insights-card__category reveal">{{ category }}</span>
+            <h1 class="article__title reveal reveal-delay-1">{{ title }}</h1>
+            <div class="article__meta reveal reveal-delay-2">
+                <span class="article__author">{{ author | default("Aber Analytics") }}</span>
+                <span class="article__separator">&middot;</span>
+                <time class="article__date">{{ date | readableDate }}</time>
+            </div>
+        </div>
+    </header>
+
+    <div class="container article__container{% if not toc %} article__container--no-toc{% endif %}">
+        {% if toc %}
+        <aside class="article__toc">
+            <h4>Contents</h4>
+            {{ content | toc | safe }}
+        </aside>
+        {% endif %}
+
+        <div class="article__body">
+            {{ content | safe }}
+        </div>
+    </div>
+</article>
