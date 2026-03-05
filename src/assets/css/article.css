@@ -286,7 +286,9 @@
     gap: 1.5rem;
     margin: 1.5rem 0 0;
 }
-.chart-pair--horizontal { grid-template-columns: 1fr 1fr; gap: 1rem; }
+.chart-pair--horizontal { grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
+.chart-pair.chart-pair--horizontal img { width: 100%; height: auto; }
+.chart-pair.chart-pair--horizontal img:first-child { width: 76.9%; display: block; margin: 0 auto; }
 .chart-pair img {
     width: 100%; height: auto;
     border-radius: 8px;
