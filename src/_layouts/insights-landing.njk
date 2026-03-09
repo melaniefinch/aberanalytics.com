@@ -19,11 +19,6 @@ extraCss:
         <div class="insights-grid">
             {% for post in collections.insights %}
             <a href="{{ post.url }}" class="insights-card reveal">
-                {% if post.data.thumbnail %}
-                <div class="insights-card__thumb" style="background-image: url('{{ post.data.thumbnail }}')"></div>
-                {% else %}
-                <div class="insights-card__thumb insights-card__thumb--default"></div>
-                {% endif %}
                 <div class="insights-card__body">
                     <h3 class="insights-card__title">{{ post.data.title }}</h3>
                     <p class="insights-card__excerpt">{{ post.data.excerpt }}</p>
