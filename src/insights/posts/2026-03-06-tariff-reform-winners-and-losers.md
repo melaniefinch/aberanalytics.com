@@ -4,7 +4,7 @@ date: 2026-03-06
 author: "Aber Analytics"
 excerpt: "The AEMC's proposed shift to fixed-dominant network tariffs would cut bills for grid-dependent households but raise costs for most solar and battery owners — the households driving Australia's energy transition."
 layout: article.njk
-draft: true
+draft: false
 tags: ["insights"]
 plotly: true
 extraScripts:

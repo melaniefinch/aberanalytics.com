@@ -4,7 +4,7 @@ date: 2026-03-09
 author: "Aber Analytics"
 excerpt: "Understanding physical bottlenecks can yield a pragmatic view where the market lands in 2030"
 layout: article.njk
-draft: true
+draft: false
 tags: ["insights"]
 extraScripts:
   - "https://cdn.plot.ly/plotly-basic-latest.min.js"
