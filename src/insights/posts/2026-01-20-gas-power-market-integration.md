@@ -1,11 +1,10 @@
 ---
-title: "[SAMPLE] Why gas and power markets can't be modelled in isolation"
+title: "Why gas and power markets can't be modelled in isolation"
 date: 2026-01-20
 author: "Aber Analytics"
-category: "Research"
 excerpt: "The interdependence between Australian gas and electricity markets means that modelling them separately leads to systematically wrong conclusions."
 layout: article.njk
-toc: false
+draft: true
 tags: ["insights"]
 ---
 

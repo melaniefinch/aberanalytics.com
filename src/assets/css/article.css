@@ -1,9 +1,17 @@
 /* ===== Article Page ===== */
 
+.article {
+    overflow-x: clip;
+}
+
 .article__header {
     padding: calc(6rem + var(--section-padding)) 0 3rem;
     background: linear-gradient(160deg, #2a1b47 0%, var(--deep-purple) 40%, #1e1440 100%);
     color: var(--white);
+}
+
+.article__header .container {
+    max-width: calc(740px + clamp(1.5rem, 4vw, 3rem) * 2);
 }
 
 .article__back {
@@ -24,7 +32,7 @@
 .article__title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 800;
-    max-width: 800px;
+    max-width: 740px;
     margin-bottom: 1.25rem;
 }
 
@@ -103,6 +111,23 @@
     font-size: 1.05rem;
     line-height: 1.8;
     color: var(--text-dark);
+}
+
+/* Prose reading column — text stays narrow, charts/embeds go full-width */
+.article__body > p,
+.article__body > h2,
+.article__body > h3,
+.article__body > ul,
+.article__body > ol,
+.article__body > blockquote,
+.article__body > hr,
+.article__body > .callout,
+.article__body > .article-lede,
+.article__body > .how-we-did-this,
+.article__body > .footnotes {
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .article__body h2 {
@@ -251,4 +276,170 @@
         padding-bottom: 1.5rem;
         border-bottom: 1px solid rgba(82, 48, 139, 0.08);
     }
+}
+
+/* ===== Callout Box ===== */
+.callout {
+    background: var(--off-white);
+    border: 1px solid rgba(82, 48, 139, 0.12);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem 1.25rem;
+    margin: 2rem 0;
+}
+.callout h4 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 0.75rem;
+}
+.callout p, .callout ul {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+.callout ul { padding-left: 1.25rem; }
+.callout li { margin-bottom: 0.5rem; }
+
+/* ===== Article Lede (opening insight tile) ===== */
+.article-lede {
+    background: linear-gradient(135deg, rgba(82, 48, 139, 0.03) 0%, rgba(82, 48, 139, 0.07) 100%);
+    border: 1px solid rgba(82, 48, 139, 0.1);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin-bottom: 2rem;
+}
+.article-lede p {
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: var(--text-dark);
+}
+.article-lede p:last-child { margin-bottom: 0; }
+
+/* ===== Chart Pair (side-by-side) ===== */
+.chart-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0 0;
+}
+.chart-pair img {
+    width: 100%; height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(82, 48, 139, 0.08);
+    margin: 0;
+}
+.chart-frame { margin: 0; }
+.chart-frame figcaption {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+.chart-frame img {
+    width: 100%; height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(82, 48, 139, 0.08);
+    margin: 0;
+}
+.ldc-chart {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(82, 48, 139, 0.06);
+    background: #FAFAFA;
+}
+
+/* ===== Section Commentary ===== */
+.section-commentary {
+    background: var(--off-white);
+    border: 1px solid rgba(82, 48, 139, 0.08);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.section-commentary p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+.section-commentary p:last-child { margin-bottom: 0; }
+
+/* ===== Legend ===== */
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(82, 48, 139, 0.1);
+}
+.legend-item { display: flex; align-items: flex-start; gap: 0.6rem; flex: 1 1 180px; }
+.legend-swatches { display: flex; gap: 2px; margin-top: 3px; flex-shrink: 0; }
+.legend-swatch { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+.legend-text { font-size: 0.8rem; line-height: 1.5; color: var(--text-muted); }
+.legend-text strong { display: block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-dark); margin-bottom: 1px; }
+
+/* ===== Chart label & inline legend ===== */
+.chart-label { font-size: 0.82rem; color: var(--text-muted); font-style: italic; margin: 1.5rem 0 0.5rem; }
+.chart-legend { display: flex; gap: 1.25rem; margin-bottom: 0.75rem; font-size: 0.82rem; color: var(--text-muted); }
+.chart-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+.chart-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+
+/* ===== How We Did This (methodology box) ===== */
+.how-we-did-this {
+    background: var(--off-white);
+    border: 1px solid rgba(82, 48, 139, 0.12);
+    border-radius: 8px;
+    padding: 1.5rem 1.75rem 1.25rem;
+    margin: 2.5rem 0 1.5rem;
+}
+.how-we-did-this h3 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin: 0 0 0.75rem;
+}
+.how-we-did-this p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+.how-we-did-this p:last-child { margin-bottom: 0; }
+.how-we-did-this sup { font-size: 0.75em; }
+.how-we-did-this__figure {
+    margin: 1rem 0 0;
+    padding: 0 2rem;
+}
+.how-we-did-this__figure figcaption {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+.how-we-did-this img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid rgba(82, 48, 139, 0.12);
+    margin: 0.75rem 0 0;
+}
+.how-we-did-this .how-we-did-this__figure img {
+    border: none;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .chart-pair { grid-template-columns: 1fr; }
+    .legend { flex-direction: column; }
 }

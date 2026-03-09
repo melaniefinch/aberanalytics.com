@@ -1,11 +1,10 @@
 ---
-title: "[SAMPLE] Understanding Australia's Capacity Investment Scheme"
+title: "Understanding Australia's Capacity Investment Scheme"
 date: 2026-03-01
 author: "Aber Analytics"
-category: "Market Analysis"
 excerpt: "A deep dive into the CIS mechanism and what it means for renewable energy investment decisions in the NEM."
 layout: article.njk
-toc: true
+draft: true
 tags: ["insights"]
 ---
 

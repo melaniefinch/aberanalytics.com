@@ -1,11 +1,10 @@
 ---
-title: "[SAMPLE] Why three scenarios are not enough"
+title: "Why three scenarios are not enough"
 date: 2026-02-15
 author: "Aber Analytics"
-category: "Methodology"
 excerpt: "The standard approach to energy market analysis relies on a handful of deterministic scenarios. Here's why that misses the point — and what to do instead."
 layout: article.njk
-toc: true
+draft: true
 plotly: true
 tags: ["insights"]
 extraScripts:
