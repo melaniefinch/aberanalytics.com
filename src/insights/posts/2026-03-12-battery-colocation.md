@@ -9,11 +9,7 @@ tags: ["insights"]
 ---
 
 <div class="article-lede">
-<ul>
-<li>A typical battery development turns on two things: securing a site and reaching shovel-ready.</li>
-<li>Across the NEM, industrial loads are increasingly contracting battery offtake as a price hedge or as part of a broader energy portfolio.</li>
-<li>Developers who can structure behind-the-meter arrangements unlock value pools that a front-of-meter project cannot access.</li>
-</ul>
+<p><strong>A typical battery development is primarily about land and getting to shovel-ready.</strong> Across the NEM, large industrial consumers are increasingly contracting battery offtake as an energy price hedge or as part of a broader portfolio strategy. For developers willing to structure these behind-the-meter arrangements, that opens value pools that a front-of-meter project cannot reach.</p>
 </div>
 
 ## Traditional value
@@ -24,9 +20,26 @@ Battery development economics start from two foundations.
 
 **Developer margin** is the value created through the development process itself. A project that reaches shovel-ready status with consents, EPC arrangements, and financing in place commands a premium over raw development costs. The size of that premium depends on expected energy prices, the supply and demand for battery projects, and the cost of capital at the time of sale or financial close.
 
+<div class="value-bar-chart">
+
 <div class="value-bar value-bar--mini">
 <div class="value-bar__seg value-bar__seg--dev">Developer margin</div>
 <div class="value-bar__seg value-bar__seg--land">Land</div>
+</div>
+
+<div class="value-bar-legend">
+<div class="value-bar-legend__group">
+<div class="value-bar-legend__row">
+<span class="vb-dot vb-dot--dev"></span>
+<div><strong>Developer margin</strong><p>Market value of a ready-to-build project, influenced by expected future energy prices, the supply and demand for battery projects, and the cost of debt and equity at time of sale or financial close.</p></div>
+</div>
+<div class="value-bar-legend__row">
+<span class="vb-dot vb-dot--land"></span>
+<div><strong>Land</strong><p>Best next alternative for the site. For an industrial host, the relevant comparison is existing site access against the cost and lead time of securing a new grid connection from scratch.</p></div>
+</div>
+</div>
+</div>
+
 </div>
 
 ## Co-locating with an industrial load
