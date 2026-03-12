@@ -84,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Chart 1: Archetype comparison at 80% decarbonisation
     var compEl = document.getElementById('archetype-comparison');
     if (compEl) {
-        // Plotly renders first array element at bottom, so reverse display order
         var archetypes = [
             'Wind-dominant',
             'Hydro &<br>geothermal',
@@ -95,11 +94,26 @@ document.addEventListener('DOMContentLoaded', function() {
         var costs = [1.18, 1.21, 1.19, 1.02, 1.00];
         var colors = ['#B8C0CC', '#B8C0CC', '#B8C0CC', '#B8C0CC', '#52308B'];
 
+        // Break mark annotations on each bar
+        var annot1 = [];
+        archetypes.forEach(function(name) {
+            annot1.push({
+                text: '/ /', x: 0.92, y: name,
+                xref: 'x', yref: 'y',
+                showarrow: false,
+                font: { size: 16, color: 'rgba(255,255,255,0.8)', family: 'Inter, sans-serif' }
+            });
+        });
+        annot1.push({
+            text: 'Source: Aber Analytics power system archetype model',
+            xref: 'paper', yref: 'paper',
+            x: 0, y: -0.25, xanchor: 'left',
+            showarrow: false, font: sourceFont
+        });
+
         Plotly.newPlot(compEl, [{
-            y: archetypes,
-            x: costs,
-            type: 'bar',
-            orientation: 'h',
+            y: archetypes, x: costs,
+            type: 'bar', orientation: 'h',
             marker: { color: colors },
             text: costs.map(function(v) { return v.toFixed(2); }),
             textposition: 'outside',
@@ -114,31 +128,17 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             paper_bgcolor: 'transparent',
             plot_bgcolor: 'transparent',
-            margin: { t: 40, r: 60, b: 40, l: 130 },
+            margin: { t: 40, r: 60, b: 60, l: 130 },
             xaxis: {
-                showgrid: false,
-                zeroline: false,
-                range: [0, 1.4],
-                tickformat: '.1f'
+                showgrid: false, zeroline: false,
+                range: [0.9, 1.30], tickformat: '.1f', dtick: 0.1
             },
-            yaxis: {
-                showgrid: false,
-                zeroline: false,
-                automargin: true
-            },
+            yaxis: { showgrid: false, zeroline: false, automargin: true },
             showlegend: false,
-            annotations: [{
-                text: 'Source: Aber Analytics power system archetype model',
-                xref: 'paper', yref: 'paper',
-                x: 0, y: -0.12, xanchor: 'left',
-                showarrow: false,
-                font: sourceFont
-            }],
+            annotations: annot1,
             shapes: [{
-                type: 'line',
-                x0: 1, x1: 1,
-                y0: -0.5, y1: 4.5,
-                yref: 'y',
+                type: 'line', x0: 1, x1: 1, y0: -0.05, y1: 1.05,
+                xref: 'x', yref: 'paper',
                 line: { color: '#333', width: 1.5, dash: 'dash' }
             }]
         }, { responsive: true, displayModeBar: false });
@@ -147,7 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Chart 2: System cost at 80% vs 95% decarbonisation
     var decarbEl = document.getElementById('decarb-trajectory');
     if (decarbEl) {
-        var archetypes2 = ['Australia', 'Nuclear +\nrenewables', 'Large Asian\nplayers', 'Hydro &\ngeothermal', 'Wind-\ndominant'];
+        var archetypes2 = ['Australia', 'Nuclear +
+renewables', 'Large Asian
+players', 'Hydro &
+geothermal', 'Wind-
+dominant'];
         var cost80 = [1.00, 1.02, 1.19, 1.21, 1.18];
         var cost95 = [1.22, 1.04, 1.33, 1.30, 1.26];
         var increases = ['+21.6%', '+2.3%', '+11.8%', '+7.7%', '+6.9%'];
@@ -161,7 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
             textfont: { size: 10, family: 'Inter, sans-serif' },
             cliponaxis: false
         };
-
         var trace95 = {
             x: archetypes2, y: cost95,
             type: 'bar', name: '95%',
@@ -172,30 +175,21 @@ document.addEventListener('DOMContentLoaded', function() {
             cliponaxis: false
         };
 
-        var annotations2 = archetypes2.map(function(a, i) {
+        var annot2 = archetypes2.map(function(a, i) {
             return {
-                x: a,
-                y: cost95[i],
+                x: a, y: cost95[i],
                 text: '<b>' + increases[i] + '</b>',
-                showarrow: true,
-                arrowhead: 0,
-                arrowwidth: 1,
+                showarrow: true, arrowhead: 0, arrowwidth: 1,
                 arrowcolor: i === 0 ? '#D55268' : '#555',
-                ax: 0, ay: -30,
-                font: {
-                    color: i === 0 ? '#D55268' : '#333',
-                    size: 12,
-                    family: 'Inter, sans-serif'
-                }
+                ax: 0, ay: -35,
+                font: { color: i === 0 ? '#D55268' : '#333', size: 12, family: 'Inter, sans-serif' }
             };
         });
-
-        annotations2.push({
+        annot2.push({
             text: 'Source: Aber Analytics power system archetype model',
             xref: 'paper', yref: 'paper',
-            x: 0, y: -0.22, xanchor: 'left',
-            showarrow: false,
-            font: sourceFont
+            x: 0, y: -0.32, xanchor: 'left',
+            showarrow: false, font: sourceFont
         });
 
         Plotly.newPlot(decarbEl, [trace80, trace95], {
@@ -207,24 +201,21 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             paper_bgcolor: 'transparent',
             plot_bgcolor: 'transparent',
-            margin: { t: 40, r: 20, b: 80, l: 50 },
+            margin: { t: 40, r: 20, b: 95, l: 50 },
             barmode: 'group',
-            xaxis: {
-                showgrid: false,
-                zeroline: false,
-                tickangle: 0
-            },
+            xaxis: { showgrid: false, zeroline: false, tickangle: 0 },
             yaxis: {
-                showgrid: false,
-                zeroline: false,
-                range: [0, 1.65],
-                tickformat: '.1f'
+                showgrid: false, zeroline: false,
+                range: [0.85, 1.55], tickformat: '.1f', dtick: 0.1
             },
             showlegend: true,
-            legend: { orientation: 'h', y: -0.15, x: 0.5, xanchor: 'center' },
-            bargap: 0.25,
-            bargroupgap: 0.1,
-            annotations: annotations2
+            legend: { orientation: 'h', y: -0.18, x: 0.5, xanchor: 'center' },
+            bargap: 0.25, bargroupgap: 0.1,
+            annotations: annot2,
+            shapes: [
+                {type:'line', xref:'paper', yref:'y', x0:-0.015, x1:0.02, y0:0.86, y1:0.90, line:{color:'#999', width:1.5}},
+                {type:'line', xref:'paper', yref:'y', x0:0.005, x1:0.04, y0:0.86, y1:0.90, line:{color:'#999', width:1.5}}
+            ]
         }, { responsive: true, displayModeBar: false });
     }
 
