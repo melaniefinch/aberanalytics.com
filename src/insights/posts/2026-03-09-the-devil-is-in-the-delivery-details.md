@@ -73,13 +73,13 @@ Some selected findings on these drivers in particular:
 We believe the highest quality decisions require this kind of pragmatic view on the system outlook across the board, and an understanding of how shifts in major drivers will change it.
 
 
+<div class="contact-cta">
+<p>Our energy market modelling includes up-to-date inputs and assumptions on delivery trajectories and timelines. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how our energy market model can sharpen your view of the transition.</p>
+</div>
+
 ---
 
 ## References and methodology
-
-<div class="contact-cta">
-<p>Our delivery risk modelling quantifies the gap between ISP projections and what physical constraints make achievable. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how build-rate risk affects your investment case.</p>
-</div>
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>

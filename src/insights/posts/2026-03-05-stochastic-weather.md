@@ -54,13 +54,13 @@ For asset owners and investors who typically work from a single forecast, a poin
 
 **Understanding that distribution is what allows for more informed decisions on asset selection, project financing, and portfolio construction.** As the renewable fleet grows and weather-driven revenue risk becomes a more significant factor in project economics, the ability to model that risk with greater precision will only become more valuable.
 
+<div class="contact-cta">
+<p><a href="mailto:info@aberanalytics.com">Get in touch</a> to learn more about our stochastic approach to energy market returns.</p>
+</div>
+
 ---
 
 ## References and methodology
-
-<div class="contact-cta">
-<p>Our stochastic weather engine generates 500 synthetic weather years to quantify the full revenue distribution for wind and solar assets. <a href="mailto:info@aberanalytics.com">Get in touch</a> to see what weather risk looks like for your asset or portfolio.</p>
-</div>
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>

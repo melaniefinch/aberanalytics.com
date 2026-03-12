@@ -71,13 +71,13 @@ If a fixed-dominant tariff is pursued, it should be treated as a transitional me
 </ol>
 </div>
 
----
-
-## References and methodology
-
 <div class="contact-cta">
 <p>Our network tariff modelling tools break down the bill impacts of tariff reform by customer archetype, including solar and battery owners. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss what reform means for your customers or assets.</p>
 </div>
+
+---
+
+## References and methodology
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>

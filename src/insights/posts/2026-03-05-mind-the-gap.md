@@ -115,13 +115,13 @@ Use the interactive dashboard to explore load duration curves for any NEM state,
   <p class="chart-embed__title">Interactive LDC Explorer &mdash; NEM Draft 2026 ISP</p>
 </div>
 
+<div class="contact-cta">
+<p>This analysis draws on our capacity expansion modelling of the NEM. <a href="mailto:info@aberanalytics.com">Get in touch</a> to learn more about our view of where the NEM is heading and what it means for your portfolio.</p>
+</div>
+
 ---
 
 ## References and methodology
-
-<div class="contact-cta">
-<p>Our load duration curve and reliability modelling let you interrogate firm capacity across any NEM state, scenario, and year. <a href="mailto:info@aberanalytics.com">Get in touch</a> to explore what the energy transition means for your reliability exposure.</p>
-</div>
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>

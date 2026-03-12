@@ -66,10 +66,10 @@ The CIS is well-designed for its stated purpose: accelerating investment to meet
 
 We're continuing to model these dynamics across our full scenario set.
 
----
-
-## References and methodology
-
 <div class="contact-cta">
 <p>Our CIS modelling covers strike price calibration, revenue support, and investment viability across technology types. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how the scheme affects your project economics.</p>
 </div>
+
+---
+
+## References and methodology
