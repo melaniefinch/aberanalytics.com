@@ -572,6 +572,54 @@
 .value-bar__seg--alpha  { background: #3a8c5a; flex: 22; }
 .value-bar__seg--dev    { background: #52308B; flex: 36; }
 .value-bar__seg--land   { background: #9ca3af; flex: 12; }
+/* FTM/BTM dividing line — sits on top of developer margin segment */
+.value-bar__seg--ftm-line {
+    border-top: 2px dashed rgba(255, 255, 255, 0.75) !important;
+}
+/* Click interactivity */
+.value-bar__seg[data-key] { cursor: pointer; transition: filter 0.12s ease; }
+.value-bar__seg[data-key]:hover { filter: brightness(1.1); }
+.value-bar__seg.vb-active {
+    filter: brightness(1.2);
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: -2px;
+    position: relative;
+    z-index: 1;
+}
+/* Annotation column */
+.value-bar-annot {
+    width: 82px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+.vba-group {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+    position: relative;
+    font-size: 0.62rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.vba-group::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    border-radius: 1px;
+}
+/* BTM group covers: cong(10)+loss(10)+tariff(10)+alpha(22) = 52 */
+.vba-group--btm { flex: 52; color: #7a4000; border-bottom: 1px dashed rgba(0,0,0,0.15); }
+.vba-group--btm::before { background: #e8913a; }
+/* FTM group covers: dev(36)+land(12) = 48 */
+.vba-group--ftm { flex: 48; color: var(--purple); }
+.vba-group--ftm::before { background: var(--purple); }
 
 .value-bar-legend {
     flex: 1;
@@ -608,7 +656,15 @@
     display: flex;
     align-items: flex-start;
     gap: 0.6rem;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.2rem 0.35rem;
+    margin: -0.2rem -0.35rem;
+    transition: background 0.12s ease;
 }
+.value-bar-legend__row:hover { background: rgba(82, 48, 139, 0.04); }
+.value-bar-legend__row.vb-active { background: rgba(82, 48, 139, 0.07); }
+.value-bar-legend__row.vb-active strong { color: var(--purple); }
 .vb-dot {
     width: 10px;
     height: 10px;
@@ -638,9 +694,11 @@
 }
 @media (max-width: 580px) {
     .value-bar-chart { flex-direction: column; }
-    .value-bar { width: 100%; min-height: 120px; flex-direction: row; }
-    .value-bar__seg { font-size: 0.6rem; }
+    .value-bar { width: 100%; min-height: 80px; flex-direction: row; border-radius: 6px; }
+    .value-bar__seg { font-size: 0.58rem; }
     .value-bar__seg + .value-bar__seg { border-top: none; border-left: 1px solid rgba(255,255,255,0.18); }
+    .value-bar__seg--ftm-line { border-top: none !important; border-left: 2px dashed rgba(255,255,255,0.75) !important; }
+    .value-bar-annot { display: none; }
 }
 
 /* ===== Risk Comparison Accordion ===== */

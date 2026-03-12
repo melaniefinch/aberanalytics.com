@@ -9,7 +9,7 @@ tags: ["insights"]
 ---
 
 <div class="article-lede">
-<p><strong>A battery development creates value across six distinct pools.</strong> Three — land, developer margin, and energy market alpha — are available to any project. Three more only appear when the battery sits behind the meter of a large industrial load. How those additional pools are distributed between developer and industrial host is a commercial negotiation, not a fixed outcome.</p>
+<p><strong>A battery development creates value across six distinct pools.</strong> Land and developer margin are available to any front-of-meter project. Energy market alpha and three BTM-specific layers — network tariff management, avoided transmission losses, and avoided congestion — require an industrial host or a contracted offtake arrangement to access. How those pools are distributed between developer and host is a commercial negotiation, not a fixed outcome.</p>
 </div>
 
 ## Battery project value
@@ -17,43 +17,48 @@ tags: ["insights"]
 <div class="value-bar-chart">
 
 <div class="value-bar">
-<div class="value-bar__seg value-bar__seg--cong">Avoided congestion</div>
-<div class="value-bar__seg value-bar__seg--loss">Avoided tx losses</div>
-<div class="value-bar__seg value-bar__seg--tariff">Network tariff mgmt</div>
-<div class="value-bar__seg value-bar__seg--alpha">Energy market alpha</div>
-<div class="value-bar__seg value-bar__seg--dev">Developer margin</div>
-<div class="value-bar__seg value-bar__seg--land">Land</div>
+<div class="value-bar__seg value-bar__seg--cong" data-key="cong">Avoided congestion</div>
+<div class="value-bar__seg value-bar__seg--loss" data-key="loss">Avoided tx losses</div>
+<div class="value-bar__seg value-bar__seg--tariff" data-key="tariff">Network tariff mgmt</div>
+<div class="value-bar__seg value-bar__seg--alpha" data-key="alpha">Energy market alpha</div>
+<div class="value-bar__seg value-bar__seg--dev value-bar__seg--ftm-line" data-key="dev">Developer margin</div>
+<div class="value-bar__seg value-bar__seg--land" data-key="land">Land</div>
+</div>
+
+<div class="value-bar-annot">
+<div class="vba-group vba-group--btm">Additional value from BTM offtake</div>
+<div class="vba-group vba-group--ftm">Available to FTM project</div>
 </div>
 
 <div class="value-bar-legend">
 
 <div class="value-bar-legend__group">
-<div class="value-bar-legend__group-header vblg--btm">BTM co-location premium</div>
-<div class="value-bar-legend__row">
+<div class="value-bar-legend__group-header vblg--btm">Additional value from BTM offtake</div>
+<div class="value-bar-legend__row" data-key="cong">
 <span class="vb-dot vb-dot--cong"></span>
 <div><strong>Avoided congestion</strong><p>Local and upstream network constraints. A co-located battery serving on-site load dispatches regardless of upstream conditions — capturing value in the hours when standalone assets may be curtailed.</p></div>
 </div>
-<div class="value-bar-legend__row">
+<div class="value-bar-legend__row" data-key="loss">
 <span class="vb-dot vb-dot--loss"></span>
 <div><strong>Avoided transmission losses</strong><p>Marginal loss factor (MLF), driven by site location and correlation of load to grid. Energy discharged to on-site load bypasses the transmission network and avoids MLF-based deductions on both sides of the transaction.</p></div>
 </div>
-<div class="value-bar-legend__row">
+<div class="value-bar-legend__row" data-key="tariff">
 <span class="vb-dot vb-dot--tariff"></span>
 <div><strong>Network tariff management</strong><p>Network tariff structures — specifically TUOS demand charges levied on peak consumption windows. A co-located battery can reduce the site's measured peak demand and lower the TUOS bill directly.</p></div>
+</div>
+<div class="value-bar-legend__row" data-key="alpha">
+<span class="vb-dot vb-dot--alpha"></span>
+<div><strong>Energy market alpha</strong><p>The operator's view of expected future prices. Any battery can charge low and discharge high — what varies is how much of the available volatility is captured. More sophisticated dispatch and forecasting extracts more from the same market opportunity.</p></div>
 </div>
 </div>
 
 <div class="value-bar-legend__group">
-<div class="value-bar-legend__group-header vblg--base">Value pools of a battery development</div>
-<div class="value-bar-legend__row">
-<span class="vb-dot vb-dot--alpha"></span>
-<div><strong>Energy market alpha</strong><p>The operator's view of expected future prices. Any battery can charge low and discharge high — what varies is how much of the available volatility is captured. More sophisticated dispatch and forecasting extracts more from the same market opportunity.</p></div>
-</div>
-<div class="value-bar-legend__row">
+<div class="value-bar-legend__group-header vblg--base">Available to FTM project</div>
+<div class="value-bar-legend__row" data-key="dev">
 <span class="vb-dot vb-dot--dev"></span>
 <div><strong>Developer margin</strong><p>Market value of a ready-to-build project — influenced by expected future energy prices, supply and demand for battery projects, and cost of debt and equity at time of sale or financial close.</p></div>
 </div>
-<div class="value-bar-legend__row">
+<div class="value-bar-legend__row" data-key="land">
 <span class="vb-dot vb-dot--land"></span>
 <div><strong>Land</strong><p>Best next alternative for land use. For an industrial host, the relevant comparison is the value of existing site access relative to securing a new connection from scratch.</p></div>
 </div>
@@ -62,6 +67,31 @@ tags: ["insights"]
 </div>
 
 </div>
+
+<script>
+(function() {
+  var segs = document.querySelectorAll('.value-bar__seg[data-key]');
+  var rows = document.querySelectorAll('.value-bar-legend__row[data-key]');
+  function activate(key) {
+    segs.forEach(function(s) { s.classList.toggle('vb-active', s.dataset.key === key); });
+    rows.forEach(function(r) { r.classList.toggle('vb-active', r.dataset.key === key); });
+  }
+  function clear() {
+    segs.forEach(function(s) { s.classList.remove('vb-active'); });
+    rows.forEach(function(r) { r.classList.remove('vb-active'); });
+  }
+  segs.forEach(function(seg) {
+    seg.addEventListener('click', function() {
+      seg.classList.contains('vb-active') ? clear() : activate(seg.dataset.key);
+    });
+  });
+  rows.forEach(function(row) {
+    row.addEventListener('click', function() {
+      row.classList.contains('vb-active') ? clear() : activate(row.dataset.key);
+    });
+  });
+})();
+</script>
 
 Every battery project starts from the same three foundations. **Land** is the opportunity cost of the site — what else could be built or leased there. **Developer margin** is the value created by the development process itself: securing approvals, a grid connection agreement, EPC contracts, and financing. A ready-to-build project commands a premium over raw development costs, driven by expected energy prices, the supply and demand for battery projects, and the cost of capital at the time of sale. **Energy market alpha** is available to any grid-connected battery — the core arbitrage between low and high wholesale prices is accessible in principle to everyone, but the amount captured depends on commercial capability and market view. An operator with a differentiated view of short-run price formation will extract more from the same market than one running a simple rule-based strategy.
 
