@@ -77,7 +77,7 @@ The Australian bet on a high renewables system is a sound one, and the prize for
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('load', function() {
 
     var sourceFont = { size: 10, color: '#999', family: 'Inter, sans-serif' };
 
