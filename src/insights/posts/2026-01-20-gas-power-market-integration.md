@@ -38,4 +38,10 @@ Our platform models gas and power markets simultaneously within each simulation 
 
 This doesn't just produce more accurate price forecasts — it reveals the **correlation structure** between gas and power outcomes that matters for risk management. A portfolio with gas generation and renewable assets has a very different risk profile when you model the markets together versus apart.
 
-If you're making decisions that span both markets, the integrated approach isn't optional — it's essential. [Get in touch](mailto:info@aberanalytics.com) to see how it changes the picture for your portfolio.
+<div class="contact-cta">
+<p>Our integrated gas and power market model is built on the feedback loops described in this analysis. If you're building a view on prices, dispatch, or fuel costs, an integrated approach changes the picture. <a href="mailto:info@aberanalytics.com">Get in touch</a> to see how it applies to your portfolio.</p>
+</div>
+
+---
+
+## References and methodology

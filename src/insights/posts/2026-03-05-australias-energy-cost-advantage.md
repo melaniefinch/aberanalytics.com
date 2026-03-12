@@ -55,6 +55,14 @@ Australia's energy resource endowment gives it a genuine structural advantage in
 
 The Australian bet on a high renewables system is a sound one, and the prize for businesses operating here is significant if we can get the rollout right.
 
+<div class="contact-cta">
+<p>This analysis was produced using our flexible power system modelling platform, which can be configured for any market or technology mix. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how it applies to your context.</p>
+</div>
+
+---
+
+## References and methodology
+
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
 <p>We used the Aber Analytics power modelling platform to set up stylised scenario modelling of the power systems of global economies as they decarbonise. The model solves for the most efficient long-run marginal cost capacity mix to meet the demand of the system. The analysis considered a range of demand archetypes, and varying technology choices and resource quality levels.</p>

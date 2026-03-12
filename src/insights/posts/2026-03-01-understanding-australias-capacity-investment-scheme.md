@@ -64,4 +64,12 @@ The CIS is expected to accelerate investment in the NEM, but the second-order ef
 
 The CIS is well-designed for its stated purpose: accelerating investment to meet Australia's 82% renewable target. But the full implications depend on how it interacts with state-level schemes (like Victoria's VRET), transmission build timelines, and the pace of coal retirement.
 
-We're continuing to model these dynamics across our full scenario set. If you'd like to explore how the CIS affects your specific assets or investment decisions, [get in touch](mailto:info@aberanalytics.com).
+We're continuing to model these dynamics across our full scenario set.
+
+<div class="contact-cta">
+<p>Our CIS modelling covers strike price calibration, revenue support, and investment viability across technology types. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how the scheme affects your project economics.</p>
+</div>
+
+---
+
+## References and methodology

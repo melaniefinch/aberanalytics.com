@@ -71,6 +71,14 @@ If a fixed-dominant tariff is pursued, it should be treated as a transitional me
 </ol>
 </div>
 
+<div class="contact-cta">
+<p>Our network tariff modelling tools break down the bill impacts of tariff reform by customer archetype, including solar and battery owners. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss what reform means for your customers or assets.</p>
+</div>
+
+---
+
+## References and methodology
+
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
 <p>We used the Aber Analytics BTM optimisation model to simulate household energy costs under current and reformed network tariff structures. The model optimises battery charging, discharging, and export behaviour for each tariff scenario, using a typical household load of 10 kWh/day. We tested fixed-charge proportions of 60% and 80% (up from ~35% today), with reformed tariffs calculated to maintain the same total network revenue for a 10 kWh/day household. Scenarios include combinations of solar (9.975 kW), battery (10 kWh and 50 kWh), EV ownership, and both time-of-use and wholesale volume tariffs.</p>
