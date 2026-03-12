@@ -536,36 +536,48 @@
     .legend { flex-direction: column; }
 }
 
-/* ===== Value Stack Comparison (two-column) ===== */
-.value-stack-compare {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 1rem;
+/* ===== Value Stack (single column with section labels) ===== */
+.value-stack {
     margin: 1.5rem 0;
-    align-items: start;
 }
-.value-stack-col__label {
-    font-size: 0.72rem;
+.value-stack__section-label {
+    font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-    padding: 0 0.1rem;
+    color: var(--purple);
+    background: rgba(82, 48, 139, 0.04);
+    border: 1px solid rgba(82, 48, 139, 0.12);
+    border-radius: 5px 5px 0 0;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 0;
+    border-bottom: none;
 }
-.value-block-static {
-    background: rgba(82, 48, 139, 0.07);
-    border: 1px solid rgba(82, 48, 139, 0.15);
-    border-radius: 5px;
-    padding: 0.65rem 0.9rem;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 3px;
+.value-stack__section-label--btm {
+    color: #005a44;
+    background: rgba(0, 130, 100, 0.04);
+    border-color: rgba(0, 130, 100, 0.18);
+}
+.value-stack__section-label + .value-block {
+    border-radius: 0 0 5px 5px;
+    margin-top: 0;
+}
+.value-stack__section-label + .value-block > summary {
+    border-radius: 0;
+}
+.value-stack .value-block:not(:last-child) {
+    margin-bottom: 2px;
+}
+.value-stack .value-block:last-child {
+    margin-bottom: 0;
+}
+/* Gap between sections */
+.value-stack__section-label:not(:first-child) {
+    margin-top: 0.6rem;
 }
 .value-block {
     border-radius: 5px;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     overflow: hidden;
 }
 .value-block--shared > summary {
@@ -619,9 +631,6 @@
     border-color: rgba(0, 130, 100, 0.12);
 }
 .value-block__body p { margin-bottom: 0; }
-@media (max-width: 640px) {
-    .value-stack-compare { grid-template-columns: 1fr; }
-}
 
 /* ===== Risk Comparison Accordion ===== */
 .risk-accordion {

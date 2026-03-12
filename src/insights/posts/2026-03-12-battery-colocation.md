@@ -20,54 +20,16 @@ But where a battery sits physically, what is connected next to it, and how it re
 
 ## Building the value stack
 
-A standalone front-of-meter battery captures three sources of value: the land lease, the development margin (the premium a ready-to-build project commands at financial close), and energy market arbitrage.
+Any battery development rests on three value pools. Co-locate with a large industrial load and four additional layers stack on top — each driven by a different physical or commercial mechanism, none available to a battery on its own connection. Click any layer to see what drives it.
 
-Co-locate that battery with a large industrial load and four additional layers appear. Each is driven by a different physical or commercial mechanism, none of which is available to a battery on its own connection. Click any layer in the co-located column to see what drives it.
+<div class="value-stack">
 
-<div class="value-stack-compare">
-
-<div class="value-stack-col">
-<div class="value-stack-col__label">Standalone FTM</div>
-<div class="value-block-static">Land</div>
-<div class="value-block-static">Development margin</div>
-<div class="value-block-static">Energy arbitrage</div>
-</div>
-
-<div class="value-stack-col">
-<div class="value-stack-col__label">Co-located BTM</div>
-
-<details class="value-block value-block--shared">
-<summary>Land</summary>
-<div class="value-block__body">
-<p>Every battery needs land. For a standalone project, this is a straightforward lease negotiation with a landowner. For a co-located battery, the industrial host often has underutilised land adjacent to existing infrastructure, which can mean faster access and more flexible terms.</p>
-</div>
-</details>
-
-<details class="value-block value-block--shared">
-<summary>Development margin</summary>
-<div class="value-block__body">
-<p>Securing development approvals, a grid connection agreement, EPC contracts, and financing takes 18 to 24 months and real capital. The developer's margin is the premium a ready-to-build project commands over raw development costs. For co-located projects, an existing grid connection and site infrastructure can compress this timeline, though the commercial structuring with the industrial host adds its own complexity.</p>
-</div>
-</details>
-
-<details class="value-block value-block--shared">
-<summary>Energy arbitrage</summary>
-<div class="value-block__body">
-<p>The most widely understood source of battery value. Charge when wholesale prices are low, typically midday when solar output peaks, and discharge when prices are high, during evening peaks when thermal generators set the marginal price. The size of the opportunity depends on the spread between daily price troughs and peaks, and how much of the available volatility the battery can capture. Both standalone and co-located batteries access this value.</p>
-</div>
-</details>
+<div class="value-stack__section-label value-stack__section-label--btm">Co-location premium</div>
 
 <details class="value-block value-block--btm">
-<summary>Network tariff management</summary>
+<summary>Precinct and load diversity</summary>
 <div class="value-block__body">
-<p>Transmission use-of-system (TUOS) charges are typically levied on a consumer's peak demand during specific windows, often 4pm to 8pm on weekdays. For a large industrial load drawing hundreds of megawatts, these demand charges represent a substantial share of total energy costs. A co-located battery can discharge during peak windows to reduce the site's measured demand, directly lowering the TUOS bill. A standalone front-of-meter battery has no load to shave and captures none of this value.</p>
-</div>
-</details>
-
-<details class="value-block value-block--btm">
-<summary>Avoided transmission losses</summary>
-<div class="value-block__body">
-<p>Every megawatt-hour moving through the transmission network loses a fraction to resistive losses, quantified through marginal loss factors (MLFs). At some NEM nodes, losses exceed 5% of delivered energy. When a co-located battery charges from the grid and discharges directly to on-site load, the energy serving that load bypasses the transmission network. The avoided losses accrue as a cost saving to the site. A standalone battery exports everything back through the grid and incurs losses on both sides of the transaction.</p>
+<p>Where an industrial site has surplus grid connection capacity beyond its own needs, additional tenants can co-locate: data centres, other manufacturers, logistics operations. Each adds load with a different consumption profile, creating diversity that improves overall connection utilisation. The site can distribute shared infrastructure costs across a larger base, and the operator of the embedded network can capture a retail margin on energy supplied to tenants. This value only exists when a battery is part of a broader precinct anchored by industrial load.</p>
 </div>
 </details>
 
@@ -79,13 +41,41 @@ Co-locate that battery with a large industrial load and four additional layers a
 </details>
 
 <details class="value-block value-block--btm">
-<summary>Precinct and load diversity</summary>
+<summary>Avoided transmission losses</summary>
 <div class="value-block__body">
-<p>Where an industrial site has surplus grid connection capacity beyond its own needs, additional tenants can co-locate: data centres, other manufacturers, logistics operations. Each adds load with a different consumption profile, creating diversity that improves overall connection utilisation. The site can distribute shared infrastructure costs across a larger base, and the operator of the embedded network can capture a retail margin on energy supplied to tenants. This value only exists when a battery is part of a broader precinct anchored by industrial load.</p>
+<p>Every megawatt-hour moving through the transmission network loses a fraction to resistive losses, quantified through marginal loss factors (MLFs). At some NEM nodes, losses exceed 5% of delivered energy. When a co-located battery charges from the grid and discharges directly to on-site load, the energy serving that load bypasses the transmission network. The avoided losses accrue as a cost saving to the site. A standalone battery exports everything back through the grid and incurs losses on both sides of the transaction.</p>
 </div>
 </details>
 
+<details class="value-block value-block--btm">
+<summary>Network tariff management</summary>
+<div class="value-block__body">
+<p>Transmission use-of-system (TUOS) charges are typically levied on a consumer's peak demand during specific windows, often 4pm to 8pm on weekdays. For a large industrial load drawing hundreds of megawatts, these demand charges represent a substantial share of total energy costs. A co-located battery can discharge during peak windows to reduce the site's measured demand, directly lowering the TUOS bill. A standalone front-of-meter battery has no load to shave and captures none of this value.</p>
 </div>
+</details>
+
+<div class="value-stack__section-label">Value pools of a battery development</div>
+
+<details class="value-block value-block--shared">
+<summary>Energy market alpha</summary>
+<div class="value-block__body">
+<p>The core energy arbitrage opportunity — charge when prices are low, discharge when prices are high — is available to any grid-connected battery. But the amount captured depends heavily on how the battery is dispatched. A developer or operator with a differentiated view of short-run price formation, or with access to more sophisticated bidding and forecasting tools, will extract more from the same market. This layer rewards commercial capability, not just asset presence.</p>
+</div>
+</details>
+
+<details class="value-block value-block--shared">
+<summary>Development margin</summary>
+<div class="value-block__body">
+<p>Securing development approvals, a grid connection agreement, EPC contracts, and financing takes 18 to 24 months and real capital. The developer's margin is the premium a ready-to-build project commands over raw development costs. For co-located projects, an existing grid connection and site infrastructure can compress this timeline, though the commercial structuring with the industrial host adds its own complexity.</p>
+</div>
+</details>
+
+<details class="value-block value-block--shared">
+<summary>Land</summary>
+<div class="value-block__body">
+<p>Every battery needs land. For a standalone project, this is a straightforward lease negotiation with a landowner. For a co-located battery, the industrial host often has underutilised land adjacent to existing infrastructure, which can mean faster access and more flexible terms.</p>
+</div>
+</details>
 
 </div>
 
