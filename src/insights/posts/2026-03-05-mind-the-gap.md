@@ -116,7 +116,7 @@ Use the interactive dashboard to explore load duration curves for any NEM state,
 </div>
 
 <div class="contact-cta">
-<p>This analysis draws on AEMO's capacity expansion planning for the NEM. We also have our own views on where the NEM is heading. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss what that means for your portfolio.</p>
+<p>This analysis draws on AEMO's capacity expansion planning for the NEM. We also have our own views on where the NEM is heading, using our proprietary power and gas models. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss our modelling capabilities further.</p>
 </div>
 
 ---
