@@ -2,17 +2,36 @@
 title: "The hidden value in your industrial load"
 date: 2026-03-12
 author: "Aber Analytics"
-excerpt: "A battery development creates value across six distinct pools. Three are available to any project. Three more only appear when the battery sits behind the meter of a large industrial load — and how they are shared between developer and host is a commercial negotiation."
+excerpt: "A typical battery development turns on land and reaching shovel-ready. Co-locating with an industrial load unlocks additional value pools that a front-of-meter project cannot access — and how those pools are shared is a commercial negotiation."
 layout: article.njk
 draft: true
 tags: ["insights"]
 ---
 
 <div class="article-lede">
-<p><strong>A battery development creates value across six distinct pools.</strong> Land and developer margin are available to any front-of-meter project. Energy market alpha and three BTM-specific layers — network tariff management, avoided transmission losses, and avoided congestion — require an industrial host or a contracted offtake arrangement to access. How those pools are distributed between developer and host is a commercial negotiation, not a fixed outcome.</p>
+<ul>
+<li>A typical battery development turns on two things: securing a site and reaching shovel-ready.</li>
+<li>Across the NEM, industrial loads are increasingly contracting battery offtake as a price hedge or as part of a broader energy portfolio.</li>
+<li>Developers who can structure behind-the-meter arrangements unlock value pools that a front-of-meter project cannot access.</li>
+</ul>
 </div>
 
-## Battery project value
+## Traditional value
+
+Battery development economics start from two foundations.
+
+**Land** is the opportunity cost of the site. For a greenfield project that means site acquisition, a grid connection agreement, and development approvals. For an industrial host, the relevant comparison is the value of existing site access against the cost and lead time of securing a new connection from scratch.
+
+**Developer margin** is the value created through the development process itself. A project that reaches shovel-ready status with consents, EPC arrangements, and financing in place commands a premium over raw development costs. The size of that premium depends on expected energy prices, the supply and demand for battery projects, and the cost of capital at the time of sale or financial close.
+
+<div class="value-bar value-bar--mini">
+<div class="value-bar__seg value-bar__seg--dev">Developer margin</div>
+<div class="value-bar__seg value-bar__seg--land">Land</div>
+</div>
+
+## Co-locating with an industrial load
+
+When there is a willing offtaker with a large industrial load, additional value pools appear. Each one traces back to the same physical fact: the battery and the load share a grid connection, so energy discharged on-site never enters the shared transmission network.
 
 <div class="value-bar-chart">
 
@@ -36,19 +55,19 @@ tags: ["insights"]
 <div class="value-bar-legend__group-header vblg--btm">Additional value from BTM offtake</div>
 <div class="value-bar-legend__row" data-key="cong">
 <span class="vb-dot vb-dot--cong"></span>
-<div><strong>Avoided congestion</strong><p>Local and upstream network constraints. A co-located battery serving on-site load dispatches regardless of upstream conditions — capturing value in the hours when standalone assets may be curtailed.</p></div>
+<div><strong>Avoided congestion</strong><p>A co-located battery serving on-site load dispatches regardless of upstream network conditions, capturing value in hours when standalone assets behind constrained transmission may be curtailed.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="loss">
 <span class="vb-dot vb-dot--loss"></span>
-<div><strong>Avoided transmission losses</strong><p>Marginal loss factor (MLF), driven by site location and correlation of load to grid. Energy discharged to on-site load bypasses the transmission network and avoids MLF-based deductions on both sides of the transaction.</p></div>
+<div><strong>Avoided transmission losses</strong><p>Marginal loss factors (MLFs) quantify the resistive losses incurred moving energy through the transmission network. Energy discharged to on-site load bypasses that network entirely, avoiding MLF-based deductions on both sides of the transaction.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="tariff">
 <span class="vb-dot vb-dot--tariff"></span>
-<div><strong>Network tariff management</strong><p>Network tariff structures — specifically TUOS demand charges levied on peak consumption windows. A co-located battery can reduce the site's measured peak demand and lower the TUOS bill directly.</p></div>
+<div><strong>Network tariff management</strong><p>TUOS demand charges are levied on peak consumption during specific windows, typically 4pm to 8pm on weekdays. For a large industrial site, these charges represent a material share of total energy costs. A co-located battery can discharge during those windows to reduce measured peak demand and lower the bill directly.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="alpha">
 <span class="vb-dot vb-dot--alpha"></span>
-<div><strong>Energy market alpha</strong><p>The operator's view of expected future prices. Any battery can charge low and discharge high — what varies is how much of the available volatility is captured. More sophisticated dispatch and forecasting extracts more from the same market opportunity.</p></div>
+<div><strong>Energy market alpha</strong><p>Wholesale price arbitrage and energy cost hedging. A battery charges when prices are low and discharges when they are high. For an industrial consumer, a contracted battery can also serve as a hedge against price spikes, converting spot exposure into a more predictable cost. The share of volatility captured depends on commercial capability and market view.</p></div>
 </div>
 </div>
 
@@ -56,11 +75,11 @@ tags: ["insights"]
 <div class="value-bar-legend__group-header vblg--base">Available to FTM project</div>
 <div class="value-bar-legend__row" data-key="dev">
 <span class="vb-dot vb-dot--dev"></span>
-<div><strong>Developer margin</strong><p>Market value of a ready-to-build project — influenced by expected future energy prices, supply and demand for battery projects, and cost of debt and equity at time of sale or financial close.</p></div>
+<div><strong>Developer margin</strong><p>Market value of a ready-to-build project, influenced by expected future energy prices, the supply and demand for battery projects, and the cost of debt and equity at time of sale or financial close.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="land">
 <span class="vb-dot vb-dot--land"></span>
-<div><strong>Land</strong><p>Best next alternative for land use. For an industrial host, the relevant comparison is the value of existing site access relative to securing a new connection from scratch.</p></div>
+<div><strong>Land</strong><p>Best next alternative for the site. For an industrial host, the relevant comparison is existing site access against the cost and lead time of securing a new grid connection from scratch.</p></div>
 </div>
 </div>
 
@@ -93,117 +112,25 @@ tags: ["insights"]
 })();
 </script>
 
-Every battery project starts from the same three foundations. **Land** is the opportunity cost of the site — what else could be built or leased there. **Developer margin** is the value created by the development process itself: securing approvals, a grid connection agreement, EPC contracts, and financing. A ready-to-build project commands a premium over raw development costs, driven by expected energy prices, the supply and demand for battery projects, and the cost of capital at the time of sale. **Energy market alpha** is available to any grid-connected battery — the core arbitrage between low and high wholesale prices is accessible in principle to everyone, but the amount captured depends on commercial capability and market view. An operator with a differentiated view of short-run price formation will extract more from the same market than one running a simple rule-based strategy.
-
-## What a large industrial load adds
-
-Co-locate that battery with a large industrial consumer and three additional value pools appear. Each one stems from the same physical fact: the battery and the load share a grid connection, so energy discharged on-site never enters the shared transmission network.
-
-**Network tariff management.** Transmission use-of-system (TUOS) charges are levied on a consumer's peak demand during specific windows, often 4pm to 8pm on weekdays. For a large industrial load drawing hundreds of megawatts, these demand charges represent a substantial share of total energy costs. A co-located battery can discharge during those windows to reduce the site's measured demand and lower the bill directly. A standalone front-of-meter battery has no load to shave and captures none of this value.
-
-**Avoided transmission losses.** Every megawatt-hour moving through the transmission network loses a fraction to resistive losses, quantified through marginal loss factors (MLFs). At some NEM nodes, losses exceed 5% of delivered energy. When a co-located battery discharges to on-site load, that energy bypasses the transmission network entirely. The avoided losses accrue as a cost saving to the site. A standalone battery incurs losses on both the charge and discharge sides of the transaction.
-
-**Avoided congestion.** A standalone battery may be curtailed precisely when prices are highest if it sits behind a congested part of the network. A co-located battery serving on-site load doesn't face that constraint — the energy never enters the shared network, and it dispatches regardless of upstream conditions.
-
 ## Splitting the value
 
-These additional pools don't automatically accrue to the developer. Each needs to be contracted for.
+The exact realisation of each pool depends on site and offtake-specific conditions. Network tariff savings flow through the industrial host's energy bill, so accessing them requires an agreed mechanism for measuring and sharing those savings. Avoided losses depend on the host's MLF, which varies by node. Congestion avoidance accrues to whoever controls dispatch. Each pool requires a contractual structure to capture.
 
-Network tariff savings flow through the industrial host's energy bill; capturing them requires an agreed mechanism for measuring and sharing those savings. Avoided losses depend on the host's MLF — the host needs to pass that benefit through to the battery operator. Congestion avoidance accrues to whoever controls dispatch: a host who allows the developer to operate the battery freely will capture more than one who retains operational control.
+What the numbers look like for a specific site is a modelling question. Transmission loss factors differ by node. TUOS charge structures vary by network and tariff class. Load profiles shape how much peak shaving is achievable. The general principle that co-location unlocks additional value holds across configurations, but the size of each pool and the appropriate sharing mechanism are site-specific.
 
-The commercial arrangement determines who captures each pool. A developer who negotiates shared savings mechanisms across all three layers captures more than one who leaves them on the table. An industrial host who understands the value stack can negotiate for a share of each layer, or develop the battery itself and capture the full stack.
-
-## A different risk shape
-
-The value uplift from co-location doesn't come free. Behind-the-meter arrangements add commercial complexity: offtake agreements with the industrial host, shared savings mechanisms, decisions about whether the battery can export to the grid. But the risk profile shifts in ways that matter.
-
-<div class="risk-accordion">
-
-<details class="risk-item">
-<summary>Revenue resilience</summary>
-<div class="risk-compare">
-<div class="risk-compare__col">
-<div class="risk-compare__label">Standalone</div>
-<p>Entirely dependent on wholesale spreads and volatility. If battery supply overshoots and spreads compress, there is no floor.</p>
-</div>
-<div class="risk-compare__col">
-<div class="risk-compare__label">Co-located</div>
-<p>BTM value pools (tariff management, avoided losses, avoided congestion) persist regardless of what happens to wholesale spreads. The floor is structural, not market-dependent.</p>
-</div>
-</div>
-</details>
-
-<details class="risk-item">
-<summary>Grid connection</summary>
-<div class="risk-compare">
-<div class="risk-compare__col">
-<div class="risk-compare__label">Standalone</div>
-<p>New connection required from scratch. Lead times of 12 to 24 months, uncertain costs, and no guarantee of the capacity or timing you need.</p>
-</div>
-<div class="risk-compare__col">
-<div class="risk-compare__label">Co-located</div>
-<p>Industrial sites often have existing high-voltage connections with spare capacity or a clear upgrade pathway. The connection infrastructure is already there.</p>
-</div>
-</div>
-</details>
-
-<details class="risk-item">
-<summary>Offtake certainty</summary>
-<div class="risk-compare">
-<div class="risk-compare__col">
-<div class="risk-compare__label">Standalone</div>
-<p>No natural offtaker. Revenue depends on merchant exposure or negotiating contracts with third parties.</p>
-</div>
-<div class="risk-compare__col">
-<div class="risk-compare__label">Co-located</div>
-<p>The industrial host is a built-in offtaker for peak shaving and load firming services. The commercial relationship is anchored in a shared interest in reducing the site's energy costs.</p>
-</div>
-</div>
-</details>
-
-<details class="risk-item">
-<summary>Development timeline</summary>
-<div class="risk-compare">
-<div class="risk-compare__col">
-<div class="risk-compare__label">Standalone</div>
-<p>Site acquisition, development approval, connection agreement — all from a standing start.</p>
-</div>
-<div class="risk-compare__col">
-<div class="risk-compare__label">Co-located</div>
-<p>Industrial sites often have existing approvals infrastructure, environmental baselines, and community relationships that accelerate the process.</p>
-</div>
-</div>
-</details>
-
-<details class="risk-item">
-<summary>Commercial complexity</summary>
-<div class="risk-compare">
-<div class="risk-compare__col">
-<div class="risk-compare__label">Standalone</div>
-<p>Simpler deal structure. One asset, standard merchant or offtake arrangements.</p>
-</div>
-<div class="risk-compare__col">
-<div class="risk-compare__label">Co-located</div>
-<p>More moving parts: BTM agreements, shared savings mechanisms, export rights. Requires commercial capability to structure and manage.</p>
-</div>
-</div>
-</details>
-
-</div>
-
-The most important difference shows up in a downside scenario. A standalone battery earning all its revenue from wholesale spreads is fully exposed to a world where battery capacity overshoots and spreads compress. A co-located battery still earns from network tariff reduction and loss avoidance even if market spreads fall to zero. The BTM pools provide a floor that standalone batteries don't have.
+The commercial structure determines who captures what. A developer who negotiates shared savings mechanisms across the BTM layers captures more than one who treats the host purely as a landlord. An industrial consumer who understands the full value stack can negotiate for a direct share, or develop the battery itself.
 
 ## For developers
 
-Pipeline strategy should account for the quality of co-location opportunities, not just grid connection availability and land cost. A site adjacent to a large, stable industrial load is a different kind of project to a greenfield paddock, even if the connection capacity looks identical on paper. The development effort may be comparable, but the project economics are structurally higher and more resilient to market downside.
+Pipeline strategy should account for the quality of co-location opportunities, not just grid connection availability and land cost. A site adjacent to a large, stable industrial load is a structurally different project to a greenfield paddock, even if the connection capacity looks identical on paper. Development effort may be comparable, but the economics are higher and less exposed to wholesale spread compression.
 
-The commercial structuring is harder. The counterparty relationship is ongoing. And the industrial host's own constraints (existing retail contracts, export limitations, future load uncertainty) shape what is actually achievable. The BTM value pools are available to developers who can structure the commercial arrangements to access them.
+The commercial structuring is harder. The counterparty relationship is ongoing. The industrial host's own constraints, including existing retail contracts, export limitations, and future load uncertainty, shape what is actually achievable. The BTM value pools are available to developers who can structure the arrangements to access them.
 
 ## For industrial consumers
 
-If you operate a large industrial site with a substantial grid connection, you have something battery developers want access to: your load, your connection, your land. The question is not whether a battery could improve your energy costs — in most configurations, it can. The question is what role you want to play and what share of the value you negotiate for.
+If you operate a large industrial site with a substantial grid connection, you have something battery developers want: your load, your connection, your land. The question is not whether a battery could reduce your energy costs. In most configurations, it can. The question is what role you want to play and what share of the value you negotiate for.
 
-The range of options runs from passive (lease the land, let someone else develop) to active (develop the battery yourself). Each point on that spectrum involves a different capital commitment, risk profile, and capability requirement. Your industrial load creates battery project value that the wholesale market alone cannot provide.
+The options run from passive (lease the land, let someone else develop) to active (develop the battery directly). Each point on that spectrum involves a different capital commitment, risk profile, and capability requirement. Your industrial load creates battery project value that the wholesale market alone cannot provide.
 
 <div class="contact-cta">
 <p>Aber Analytics models battery co-location economics across the NEM, including BTM value pool quantification and commercial structuring analysis. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
@@ -215,5 +142,5 @@ The range of options runs from passive (lease the land, let someone else develop
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
-<p>This article describes structural principles of battery co-location economics in the Australian National Electricity Market. Value pool descriptions are based on NEM market rules, TUOS charging frameworks, and marginal loss factor methodology as applied by AEMO. The bar chart shows illustrative relative proportions only — actual value pool sizes depend on site-specific conditions including transmission capacity, load profile, network tariff structures, and energy market outcomes. No specific project or site is referenced.</p>
+<p>This article describes structural principles of battery co-location economics in the Australian National Electricity Market. Value pool descriptions are based on NEM market rules, TUOS charging frameworks, and marginal loss factor methodology as applied by AEMO. The bar charts show illustrative relative proportions only — actual value pool sizes depend on site-specific conditions including transmission capacity, load profile, network tariff structures, and energy market outcomes. No specific project or site is referenced.</p>
 </div>

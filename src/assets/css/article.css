@@ -552,6 +552,10 @@
     overflow: hidden;
     min-height: 340px;
 }
+.value-bar--mini {
+    min-height: 110px;
+    margin: 1.5rem 0 2rem;
+}
 .value-bar__seg {
     display: flex;
     align-items: center;
