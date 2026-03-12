@@ -30,7 +30,6 @@ FFor each archetype, we started from a current system and modelled the cost-opti
 ## At 80% decarbonisation, Australia can be highly competitive
 
 {% plotlyChart "archetype-comparison", "Annualised system cost at 80% decarbonisation by Archetype" %}
-*Source: Aber Analytics power system archetype model*
 
 Australia enters this analysis from a position of genuine structural advantage due to our abundant solar and wind resources, combined with relatively low-cost firming from gas peakers. In our standard scenario, Australia achieves 80% power system decarbonisation at a system cost roughly in line with the Asian archetype and approximately 7–17% below hydro-dominated, nuclear + renewables, and wind-dominant systems. 
 
@@ -45,7 +44,6 @@ Widely sensitivity testing these results, we gained two surprising insights:
 The picture shifts significantly when decarbonisation pushes beyond 80%.
 
 {% plotlyChart "decarb-trajectory", "System cost at 80% vs 95% decarbonisation" %}
-*Source: Aber Analytics power system archetype model*
 
 Moving from 80% to 95% decarbonisation escalates Australia's annualised system cost by **20%, a significant jump.** By contrast, the Asian archetype increases by just 2% and hydro-dominated and nuclear systems see proportionally smaller increases. This is the "last mile" problem of deep decarbonisation in high renewables systems - the marginal unit of clean energy becomes increasingly expensive as the system must handle residual demand that renewables alone cannot reliably serve. Systems that already have dispatchable clean energy (hydro, geothermal, nuclear) face a much smaller incremental cost to reach very deep decarbonisation.
 
@@ -81,56 +79,60 @@ The Australian bet on a high renewables system is a sound one, and the prize for
 <script>
 document.addEventListener('DOMContentLoaded', function() {
 
+    var sourceFont = { size: 10, color: '#999', family: 'Inter, sans-serif' };
+
     // Chart 1: Archetype comparison at 80% decarbonisation
-    // Relative cost per MWh normalised to Australian cost = 1.00
-    const compEl = document.getElementById('archetype-comparison');
+    var compEl = document.getElementById('archetype-comparison');
     if (compEl) {
         // Plotly renders first array element at bottom, so reverse display order
-        const archetypes = [
-            'Wind-dominant<br>(W. Europe)',
-            'Hydro +<br>Geothermal',
-            'Coal based<br>systems',
-            'Nuclear +<br>Renewables',
+        var archetypes = [
+            'Wind-dominant',
+            'Hydro &<br>geothermal',
+            'Large Asian<br>players',
+            'Nuclear +<br>renewables',
             'Australia'
         ];
-        const costs = [1.18, 1.21, 1.19, 1.02, 1.00];
-        const colors = ['#B8C0CC', '#B8C0CC', '#B8C0CC', '#B8C0CC', '#52308B'];
+        var costs = [1.18, 1.21, 1.19, 1.02, 1.00];
+        var colors = ['#B8C0CC', '#B8C0CC', '#B8C0CC', '#B8C0CC', '#52308B'];
 
-        const trace = {
+        Plotly.newPlot(compEl, [{
             y: archetypes,
             x: costs,
             type: 'bar',
             orientation: 'h',
             marker: { color: colors },
-            text: costs.map(v => v.toFixed(2)),
+            text: costs.map(function(v) { return v.toFixed(2); }),
             textposition: 'outside',
             textfont: { size: 12, family: 'Inter, sans-serif' },
             hovertemplate: '%{y}: %{x:.2f}x Australian cost<extra></extra>'
-        };
-
-        const layout = {
+        }], {
             font: { family: 'Inter, sans-serif' },
+            title: {
+                text: 'Relative difference in system cost per MWh (normalised to Australian cost)',
+                font: { size: 12, color: '#666', family: 'Inter, sans-serif' },
+                x: 0, xanchor: 'left', y: 0.98
+            },
             paper_bgcolor: 'transparent',
             plot_bgcolor: 'transparent',
-            margin: { t: 30, r: 60, b: 50, l: 150 },
+            margin: { t: 40, r: 60, b: 40, l: 130 },
             xaxis: {
-                gridcolor: 'rgba(82, 48, 139, 0.08)',
+                showgrid: false,
                 zeroline: false,
                 range: [0, 1.4],
-                tickformat: '.2f'
+                tickformat: '.1f'
             },
             yaxis: {
-                gridcolor: 'rgba(82, 48, 139, 0.08)',
+                showgrid: false,
                 zeroline: false,
                 automargin: true
             },
             showlegend: false,
             annotations: [{
-                text: 'Relative difference in system cost per MWh (normalised to Australian cost)',
+                text: 'Source: Aber Analytics power system archetype model',
                 xref: 'paper', yref: 'paper',
-                x: 0, y: 1.06,
+                x: 0, y: -0.12, xanchor: 'left',
                 showarrow: false,
-                font: { size: 11, color: '#666', family: 'Inter, sans-serif' }
+                font: sourceFont
             }],
             shapes: [{
                 type: 'line',
@@ -139,87 +141,91 @@ document.addEventListener('DOMContentLoaded', function() {
                 yref: 'y',
                 line: { color: '#333', width: 1.5, dash: 'dash' }
             }]
-        };
-
-        Plotly.newPlot(compEl, [trace], layout, { responsive: true, displayModeBar: false });
+        }, { responsive: true, displayModeBar: false });
     }
 
     // Chart 2: System cost at 80% vs 95% decarbonisation
-    // Relative cost per MWh normalised to Australian cost at 80%
-    const decarbEl = document.getElementById('decarb-trajectory');
+    var decarbEl = document.getElementById('decarb-trajectory');
     if (decarbEl) {
-        const archetypes = ['Australia', 'Nuclear +\nRenewables', 'Coal based\nsystems', 'Hydro +\nGeothermal', 'Wind-dominant\n(W. Europe)'];
-        const cost80 = [1.00, 1.02, 1.19, 1.21, 1.18];
-        const cost95 = [1.22, 1.04, 1.33, 1.30, 1.26];
-        const increases = ['+21.6%', '+2.3%', '+11.8%', '+7.7%', '+6.9%'];
+        var archetypes2 = ['Australia', 'Nuclear +\nrenewables', 'Large Asian\nplayers', 'Hydro &\ngeothermal', 'Wind-\ndominant'];
+        var cost80 = [1.00, 1.02, 1.19, 1.21, 1.18];
+        var cost95 = [1.22, 1.04, 1.33, 1.30, 1.26];
+        var increases = ['+21.6%', '+2.3%', '+11.8%', '+7.7%', '+6.9%'];
 
-        const trace80 = {
-            x: archetypes,
-            y: cost80,
-            type: 'bar',
-            name: '80%',
+        var trace80 = {
+            x: archetypes2, y: cost80,
+            type: 'bar', name: '80%',
             marker: { color: '#B8C0CC' },
-            text: cost80.map(v => v.toFixed(2)),
+            text: cost80.map(function(v) { return v.toFixed(2); }),
             textposition: 'outside',
-            textfont: { size: 11, family: 'Inter, sans-serif' }
+            textfont: { size: 10, family: 'Inter, sans-serif' },
+            cliponaxis: false
         };
 
-        const trace95 = {
-            x: archetypes,
-            y: cost95,
-            type: 'bar',
-            name: '95%',
+        var trace95 = {
+            x: archetypes2, y: cost95,
+            type: 'bar', name: '95%',
             marker: { color: '#437F86' },
-            text: cost95.map(v => v.toFixed(2)),
+            text: cost95.map(function(v) { return v.toFixed(2); }),
             textposition: 'outside',
-            textfont: { size: 11, family: 'Inter, sans-serif' }
+            textfont: { size: 10, family: 'Inter, sans-serif' },
+            cliponaxis: false
         };
 
-        const annotations = archetypes.map((a, i) => ({
-            x: a,
-            y: Math.max(cost80[i], cost95[i]) + 0.09,
-            text: '<b>' + increases[i] + '</b>',
-            showarrow: false,
-            font: {
-                color: parseFloat(increases[i]) > 10 ? '#D55268' : '#437F86',
-                size: 12,
-                family: 'Inter, sans-serif'
-            }
-        }));
-
-        annotations.push({
-            text: 'Relative increases in system cost per MWh (normalised to Australian cost at 80%)',
-            xref: 'paper', yref: 'paper',
-            x: 0, y: 1.06,
-            showarrow: false,
-            font: { size: 11, color: '#666', family: 'Inter, sans-serif' }
+        var annotations2 = archetypes2.map(function(a, i) {
+            return {
+                x: a,
+                y: cost95[i],
+                text: '<b>' + increases[i] + '</b>',
+                showarrow: true,
+                arrowhead: 0,
+                arrowwidth: 1,
+                arrowcolor: i === 0 ? '#D55268' : '#555',
+                ax: 0, ay: -30,
+                font: {
+                    color: i === 0 ? '#D55268' : '#333',
+                    size: 12,
+                    family: 'Inter, sans-serif'
+                }
+            };
         });
 
-        const layout = {
+        annotations2.push({
+            text: 'Source: Aber Analytics power system archetype model',
+            xref: 'paper', yref: 'paper',
+            x: 0, y: -0.22, xanchor: 'left',
+            showarrow: false,
+            font: sourceFont
+        });
+
+        Plotly.newPlot(decarbEl, [trace80, trace95], {
             font: { family: 'Inter, sans-serif' },
+            title: {
+                text: 'Relative increases in system cost per MWh (normalised to Australian cost at 80%)',
+                font: { size: 12, color: '#666', family: 'Inter, sans-serif' },
+                x: 0, xanchor: 'left', y: 0.98
+            },
             paper_bgcolor: 'transparent',
             plot_bgcolor: 'transparent',
             margin: { t: 40, r: 20, b: 80, l: 50 },
             barmode: 'group',
             xaxis: {
-                gridcolor: 'rgba(82, 48, 139, 0.08)',
+                showgrid: false,
                 zeroline: false,
                 tickangle: 0
             },
             yaxis: {
-                gridcolor: 'rgba(82, 48, 139, 0.08)',
+                showgrid: false,
                 zeroline: false,
-                range: [0, 1.55],
-                tickformat: '.2f'
+                range: [0, 1.65],
+                tickformat: '.1f'
             },
             showlegend: true,
-            legend: { orientation: 'h', y: -0.2, x: 0.5, xanchor: 'center' },
+            legend: { orientation: 'h', y: -0.15, x: 0.5, xanchor: 'center' },
             bargap: 0.25,
             bargroupgap: 0.1,
-            annotations: annotations
-        };
-
-        Plotly.newPlot(decarbEl, [trace80, trace95], layout, { responsive: true, displayModeBar: false });
+            annotations: annotations2
+        }, { responsive: true, displayModeBar: false });
     }
 
 });
