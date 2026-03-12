@@ -13,7 +13,7 @@ extraScripts:
 ---
 
 <div class="article-lede">
-<p><strong>As coal retires, firm capacity in the NEM is being redefined — and the gap between traditional firming and peak demand is widening.</strong> We used load duration curves to interrogate AEMO's Draft 2026 ISP and found that by 2040, the risks that matter most for system reliability will look fundamentally different from today's.</p>
+<p><strong>As coal retires, firm capacity in the NEM is being redefined, with the gap between traditional firming and peak demand widening.</strong> We used load duration curves to interrogate AEMO's Draft 2026 ISP and found that by 2040, the risks that matter most for system reliability will look fundamentally different from today's.</p>
 </div>
 
 An increasing gap between traditional firming technologies and peak demand will change which risks matter most. Firm capacity will:
@@ -28,7 +28,7 @@ We compared today's thermal-anchored system with the storage-and-VRE system proj
 
 ## Two pictures from two states
 
-The charts below compare New South Wales and South Australia — two states that illustrate contrasting but related transition challenges. NSW is accumulating vast amounts of renewable capacity backed by storage, while SA is already deep into a transition that has made it structurally dependent on its interconnectors. Reading both together shows how the definition of firm capacity is changing, and where the new risks sit.
+The charts below compare New South Wales and South Australia, two states with contrasting but related transition challenges. NSW is adding renewable capacity backed by storage at scale, while SA is already deep into a transition that has made it structurally dependent on its interconnectors. Reading both together shows how the definition of firm capacity is changing, and where the new risks sit.
 
 <div class="callout">
 <h4>How to read these charts</h4>
@@ -81,7 +81,7 @@ The charts below compare New South Wales and South Australia — two states that
 
 **Today**, NSW has roughly 26&nbsp;GW of nameplate capacity. After firm contribution adjustments, around 15&nbsp;GW of effective capacity remains to meet a POE10 peak of ~14&nbsp;GW. Black coal provides nearly half of all effective capacity, with gas and hydro covering nearly all demand periods, reflecting today's approach to maintaining firm capacity.
 
-**By 2040**, nameplate capacity has grown to ~69&nbsp;GW, but effective firm capacity has grown from just 15&nbsp;GW to 19.5&nbsp;GW. The system has been rebuilt around variable renewables backed by storage, with wind and batteries required to cover 75% of demand periods if imports are excluded <a href="#fn4">[4]</a>. The firm contribution of that wind and storage capacity is weather-dependent and duration-limited, making the gap between the red dashed line and the demand curve the space where market behaviour and weather variability matter most.
+**By 2040**, nameplate capacity has grown to ~69&nbsp;GW, but effective firm capacity has only grown from 15&nbsp;GW to 19.5&nbsp;GW. The system has been rebuilt around variable renewables backed by storage, with wind and batteries required to cover 75% of demand periods if imports are excluded <a href="#fn4">[4]</a>. The gap between the firm line and the demand curve is where market behaviour and weather variability now matter most.
 
 ---
 
