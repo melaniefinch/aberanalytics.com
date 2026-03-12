@@ -117,7 +117,7 @@ Use the interactive dashboard to explore load duration curves for any NEM state,
 
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
-<p>Capacity projections from AEMO's Draft 2026 ISP CDP4 (Optimal Development Path), Step Change scenario workbooks. Demand traces are half-hourly load duration curves from AEMO's Draft 2026 ISP demand traces, summed across subregions to state level. Charts use reference year 2015 and POE10 demand. The interactive dashboard is built on the same dataset.</p>
+<p>Capacity outputs sourced from AEMO's <em>Draft 2026 ISP Generation and Storage Outlook</em> workbook, CDP4 (Optimal Development Path). Demand traces are drawn from AEMO's Draft 2026 ISP half-hourly demand datasets. For each state, 30-minute interval values were aggregated across subregions to produce a state-level total for each half-hour of the year. These 17,520 values were then ranked from highest to lowest to form the load duration curve, and resampled at uniform percentage intervals for display. Charts use reference year 2015 and POE10 demand. The interactive dashboard is built on the same dataset.</p>
 <!-- TODO: Add a screenshot of the modelling platform. -->
 </div>
 
