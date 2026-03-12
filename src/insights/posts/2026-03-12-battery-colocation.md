@@ -14,9 +14,9 @@ tags: ["insights"]
 
 Across the NEM, battery development has typically been a front-of-meter exercise: a site, a grid connection, and a merchant or contracted revenue stream. Industrial consumers are increasingly contracting battery offtake as part of their energy strategy. Projects co-located with those loads carry a larger value stack, and access to each layer depends on how the commercial arrangements are structured.
 
-## Traditional value
+## Development fundamentals
 
-Battery development economics start from two foundations.
+As a developer, every project comes down to the same two things: land and the work to get it built.
 
 **Land** is the opportunity cost of the site. For a greenfield project that means acquiring a suitable location and securing access to a grid connection point. An industrial host's comparison is the value of existing site access against the cost and lead time of starting a new connection from scratch.
 
