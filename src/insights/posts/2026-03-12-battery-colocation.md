@@ -78,11 +78,11 @@ When there is a willing offtaker with a large industrial load, additional value 
 </div>
 <div class="value-bar-legend__row" data-key="tariff">
 <span class="vb-dot vb-dot--tariff"></span>
-<div><strong>Network tariff management</strong><p>TUOS demand charges are levied on peak consumption during specific windows, typically 4pm to 8pm on weekdays. For a large industrial site, these charges represent a material share of total energy costs. A co-located battery can discharge during those windows to reduce measured peak demand and lower the bill directly.</p></div>
+<div><strong>Network tariff management</strong><p>TUOS demand charges are levied on peak consumption, and for a large industrial site they represent a material share of total energy costs. A co-located battery can discharge during demand peaks to reduce the site's measured demand and lower the bill directly.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="alpha">
 <span class="vb-dot vb-dot--alpha"></span>
-<div><strong>Energy market alpha</strong><p>Wholesale price arbitrage and energy cost hedging. A battery charges when prices are low and discharges when they are high. For an industrial consumer, a contracted battery can also serve as a hedge against price spikes, converting spot exposure into a more predictable cost. The share of volatility captured depends on commercial capability and market view.</p></div>
+<div><strong>Energy market alpha</strong><p>For an industrial offtaker, a contracted battery can serve as a hedge against wholesale price exposure, converting spot risk into a more predictable energy cost. The value captured depends on the offtaker's view of the market and their tolerance for price risk.</p></div>
 </div>
 </div>
 
@@ -133,14 +133,6 @@ The exact realisation of each pool depends on site and offtake-specific conditio
 
 What the numbers look like for a specific site is a modelling question. Transmission loss factors differ by node, TUOS structures vary by network and tariff class, and load profiles determine how much peak shaving is achievable. The general principle holds across configurations, but the size of each pool and the appropriate sharing mechanism are site-specific.
 
-The commercial structure determines who captures what. A developer who negotiates shared savings mechanisms across the BTM layers captures more than one who treats the host purely as a landlord. An industrial consumer who understands the full value stack can negotiate for a direct share, or develop the battery itself.
-
-## For developers
-
-Pipeline strategy should account for the quality of co-location opportunities, not just grid connection availability and land cost. A site adjacent to a large, stable industrial load is a structurally different project to a greenfield paddock, even if the connection capacity looks identical on paper. Development effort may be comparable, but the economics are higher and less exposed to wholesale spread compression.
-
-The commercial structuring is harder and the counterparty relationship is ongoing. The host's constraints, including existing retail contracts, export limitations, and future load uncertainty, shape what is actually achievable.
-
 ## For industrial consumers
 
 If you operate a large industrial site with a substantial grid connection, you have something battery developers want: your load, your connection, your land. A co-located battery will, in most configurations, reduce your energy costs. What matters is what role you want to play and what share of the value you negotiate for.
@@ -148,7 +140,7 @@ If you operate a large industrial site with a substantial grid connection, you h
 The options run from passive (lease the land, let someone else develop) to active (develop the battery directly). Each point on that spectrum involves a different capital commitment, risk profile, and capability requirement. Your industrial load creates battery project value that the wholesale market alone cannot provide.
 
 <div class="contact-cta">
-<p>Aber Analytics models battery co-location economics across the NEM, including BTM value pool quantification and commercial structuring analysis. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
+<p>Aber Analytics has modelled the value of BTM battery projects for a range of large industrial loads, combining our power market price universes with BTM dispatch optimisation to quantify each value pool at the site level. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
 </div>
 
 ---
