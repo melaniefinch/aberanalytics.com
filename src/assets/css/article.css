@@ -507,6 +507,30 @@
     margin: 0;
 }
 
+/* ===== Contact CTA box ===== */
+.contact-cta {
+    background: linear-gradient(135deg, rgba(82, 48, 139, 0.06) 0%, rgba(82, 48, 139, 0.03) 100%);
+    border: 1px solid rgba(82, 48, 139, 0.2);
+    border-left: 3px solid var(--purple);
+    border-radius: 6px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0;
+}
+.contact-cta p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+.contact-cta a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+}
+.contact-cta a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .chart-pair { grid-template-columns: 1fr; }
     .legend { flex-direction: column; }

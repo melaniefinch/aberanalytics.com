@@ -115,6 +115,14 @@ Use the interactive dashboard to explore load duration curves for any NEM state,
   <p class="chart-embed__title">Interactive LDC Explorer &mdash; NEM Draft 2026 ISP</p>
 </div>
 
+---
+
+## References and methodology
+
+<div class="contact-cta">
+<p>Our load duration curve and reliability modelling let you interrogate firm capacity across any NEM state, scenario, and year. <a href="mailto:info@aberanalytics.com">Get in touch</a> to explore what the energy transition means for your reliability exposure.</p>
+</div>
+
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
 <p>Capacity outputs sourced from AEMO's <em>Draft 2026 ISP Generation and Storage Outlook</em> workbook, CDP4 (Optimal Development Path). Demand traces are drawn from AEMO's Draft 2026 ISP half-hourly demand datasets. For each state, 30-minute interval values were aggregated across subregions to produce a state-level total for each half-hour of the year. These 17,520 values were then ranked from highest to lowest to form the load duration curve, and resampled at uniform percentage intervals for display. Charts use reference year 2015 and POE10 demand. The interactive dashboard is built on the same dataset.</p>

@@ -77,7 +77,13 @@ Tail risks are, by definition, underrepresented in a three-scenario framework. B
 
 Moving from deterministic to probabilistic analysis doesn't require throwing out everything you know. The same fundamental market dynamics apply — probabilistic modelling just explores them more thoroughly.
 
-If you'd like to see how this approach changes the picture for your assets or portfolio, [reach out to us](mailto:info@aberanalytics.com).
+---
+
+## References and methodology
+
+<div class="contact-cta">
+<p>Our probabilistic modelling platform runs hundreds of market simulations to quantify the full distribution of outcomes, not just the centre. <a href="mailto:info@aberanalytics.com">Get in touch</a> to see what it reveals for your portfolio or project.</p>
+</div>
 
 <script>
 // Revenue distribution comparison chart

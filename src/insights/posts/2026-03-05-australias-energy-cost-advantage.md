@@ -72,6 +72,14 @@ But this advantage is conditional. It requires:
 
 The Australian bet on a high renewables system is a sound one, and the prize for businesses operating here is significant if we can get the rollout right.
 
+---
+
+## References and methodology
+
+<div class="contact-cta">
+<p>Our power system archetype model underpins this analysis. <a href="mailto:info@aberanalytics.com">Get in touch</a> to explore how Australia's cost structure compares to peer economies, or to assess transmission sensitivity for a specific project.</p>
+</div>
+
 <div class="how-we-did-this">
 <h3>How we did this analysis</h3>
 <p>We used the Aber Analytics power modelling platform to set up stylised scenario modelling of the power systems of global economies as they decarbonise. The model solves for the most efficient long-run marginal cost capacity mix to meet the demand of the system. The analysis considered a range of demand archetypes, and varying technology choices and resource quality levels.</p>
