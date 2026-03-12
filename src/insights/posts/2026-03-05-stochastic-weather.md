@@ -12,8 +12,6 @@ tags: ["insights"]
 <p><strong>Wind revenue is significantly more variable than solar, and traditional reference-year modelling captures only a narrow slice of that range.</strong> Across 500 synthetic weather scenarios, the spread of possible wind revenue outcomes is wide enough to materially affect financing decisions, with downside exposure in low-wind years that a single reference year will never reveal.</p>
 </div>
 
-Weather variability is the defining driver of returns for any wind or solar asset, generating significant differences in revenue across technologies and across individual assets. This inherent variance is not always fully captured by traditional market modelling approaches.
-
 ## What reference years can't capture
 
 AEMO's Integrated System Plan, for example, relies on a set of historical reference years to represent the range of possible conditions. This preserves real-world correlations between demand, wind and solar across regions, but is constrained to combinations of conditions that have actually occurred. Unusual or novel weather combinations that are statistically plausible but have not yet been observed fall outside the modelled range.
