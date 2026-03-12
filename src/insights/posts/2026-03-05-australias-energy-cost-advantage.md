@@ -147,11 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Chart 2: System cost at 80% vs 95% decarbonisation
     var decarbEl = document.getElementById('decarb-trajectory');
     if (decarbEl) {
-        var archetypes2 = ['Australia', 'Nuclear +
-renewables', 'Large Asian
-players', 'Hydro &
-geothermal', 'Wind-
-dominant'];
+        var archetypes2 = ['Australia', 'Nuclear +\nrenewables', 'Large Asian\nplayers', 'Hydro &\ngeothermal', 'Wind-\ndominant'];
         var cost80 = [1.00, 1.02, 1.19, 1.21, 1.18];
         var cost95 = [1.22, 1.04, 1.33, 1.30, 1.26];
         var increases = ['+21.6%', '+2.3%', '+11.8%', '+7.7%', '+6.9%'];
