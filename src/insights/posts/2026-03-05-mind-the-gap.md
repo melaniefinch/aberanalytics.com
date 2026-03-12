@@ -22,7 +22,7 @@ An increasing gap between traditional firming technologies and peak demand will 
 
 **Rely more on storage market behaviour.** Batteries and pumped hydro will provide a growing share of firm capacity. Whether storage is available when the system needs it depends on efficient market signals, reliable forecasting, and sufficient reserve depth.
 
-**Lean more on interconnectors.** States like SA are projected to require more and more firming across interconnectors, a dependency that carries risk during coincident stress events.
+**Lean more on interconnectors.** SA is projected to require more and more firming across interconnectors, a dependency that carries risk during coincident stress events.
 
 We compared today's thermal-anchored system with the storage-and-VRE system projected for 2040. [Explore the extended dataset](#dashboard) in the interactive dashboard below.
 
