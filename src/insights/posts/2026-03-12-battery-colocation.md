@@ -140,14 +140,6 @@ If you operate a large industrial site with a substantial grid connection, you h
 The options run from passive (lease the land, let someone else develop) to active (develop the battery directly). Each point on that spectrum involves a different capital commitment, risk profile, and capability requirement. Your industrial load creates battery project value that the wholesale market alone cannot provide.
 
 <div class="contact-cta">
-<p>Aber Analytics has modelled the value of BTM battery projects for a range of large industrial loads, combining our power market price universes with BTM dispatch optimisation to quantify each value pool at the site level. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
+<p>Aber Analytics has experience modelling the value of BTM battery projects for large industrial loads, combining our power market price universes with BTM dispatch optimisation to quantify each value pool at the site level. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
 </div>
 
----
-
-## References and methodology
-
-<div class="how-we-did-this">
-<h3>How we did this analysis</h3>
-<p>This article describes structural principles of battery co-location economics in the Australian National Electricity Market. Value pool descriptions are based on NEM market rules, TUOS charging frameworks, and marginal loss factor methodology as applied by AEMO. The bar charts show illustrative relative proportions only; actual value pool sizes depend on site-specific conditions including transmission capacity, load profile, network tariff structures, and energy market outcomes. No specific project or site is referenced.</p>
-</div>
