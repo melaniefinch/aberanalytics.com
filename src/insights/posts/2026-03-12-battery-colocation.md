@@ -16,11 +16,11 @@ Across the NEM, industrial consumers are increasingly contracting battery offtak
 
 ## Development fundamentals
 
-Traditional battery development economics come down to two inputs: **land** and **developer margin**. Both depend on factors outside the developer's control: expected energy prices and the cost of capital at time of sale set the ceiling on what a project can command.
+Land is the opportunity cost of the site. The more important input is **developer margin**: the premium a shovel-ready project commands over raw development costs.
 
-**Land** is the opportunity cost of the site: the alternative use value and the cost of accessing a grid connection point. For an industrial host, the comparison is existing site access against the cost and lead time of a new connection from scratch.
+That premium has two drivers. Securing a connection agreement, obtaining approvals, and arranging EPC and financing retires risk and moves the project from concept to ready-to-build. The market at time of sale then determines what buyers will pay for the future revenue stream: expected energy prices and the cost of capital set the ceiling.
 
-**Developer margin** is what the development process creates. Securing connection agreements, obtaining approvals, negotiating EPC arrangements, and arranging financing get the project to shovel-ready. The premium earned over raw development costs reflects both that work and market conditions at the time of sale.
+For a standard merchant project, that ceiling is tightly linked to the wholesale market outlook. As the BESS fleet grows and spreads compress, buyers revise their expectations down, and developer margin follows. A BTM arrangement adds value pools that sit outside the merchant stack, which is why the ceiling is higher and more resilient.
 
 ## Co-locating with an industrial load
 
