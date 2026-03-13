@@ -5,6 +5,7 @@ author: "Aber Analytics"
 excerpt: "Load duration curves reveal how firm capacity is being redefined as Australia's energy system transitions from thermal-anchored generation to storage-backed renewables."
 layout: article.njk
 draft: false
+permalink: /insights/posts/mind-the-gap/
 tags: ["insights"]
 extraScripts:
   - "https://cdn.plot.ly/plotly-basic-latest.min.js"
@@ -63,7 +64,7 @@ The charts below compare New South Wales and South Australia, two states with co
 
 ---
 
-## New South Wales: The storage state
+## New South Wales: the storage state
 *Source: AEMO Draft 2026 ISP CDP4, Step Change scenario; Aber Analytics analysis*
 
 <div class="chart-pair">
@@ -85,7 +86,7 @@ The charts below compare New South Wales and South Australia, two states with co
 
 ---
 
-## South Australia: The firming gap
+## South Australia: the firming gap
 *Source: AEMO Draft 2026 ISP CDP4, Step Change scenario; Aber Analytics analysis*
 
 <div class="chart-pair">

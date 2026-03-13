@@ -5,6 +5,7 @@ author: "Aber Analytics"
 excerpt: "Traditional reference-year modelling may leave tail risks unquantified. A stochastic approach across 500 synthetic weather scenarios reveals the full distribution of revenue outcomes for wind and solar assets."
 layout: article.njk
 draft: false
+permalink: /insights/posts/under-the-weather/
 tags: ["insights"]
 ---
 

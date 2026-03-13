@@ -5,6 +5,7 @@ author: "Aber Analytics"
 excerpt: "The AEMC's proposed shift to fixed-dominant network tariffs would cut bills for grid-dependent households but raise costs for most solar and battery owners — the households driving Australia's energy transition."
 layout: article.njk
 draft: true
+permalink: /insights/posts/who-pays-for-the-poles-and-wires/
 tags: ["insights"]
 plotly: true
 extraScripts:

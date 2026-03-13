@@ -5,6 +5,7 @@ author: "Aber Analytics"
 excerpt: "The standard approach to energy market analysis relies on a handful of deterministic scenarios. Here's why that misses the point — and what to do instead."
 layout: article.njk
 draft: true
+permalink: /insights/posts/why-three-scenarios-are-not-enough/
 plotly: true
 tags: ["insights"]
 extraScripts:

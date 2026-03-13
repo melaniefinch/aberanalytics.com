@@ -2,9 +2,10 @@
 title: "The devil is in the (delivery) details"
 date: 2026-03-09
 author: "Aber Analytics"
-excerpt: "Understanding physical bottlenecks can yield a pragmatic view where the market lands in 2030"
+excerpt: "Understanding physical bottlenecks can yield a pragmatic view of where the market lands in 2030"
 layout: article.njk
 draft: false
+permalink: /insights/posts/the-devil-is-in-the-delivery-details/
 tags: ["insights"]
 extraScripts:
   - "https://cdn.plot.ly/plotly-basic-latest.min.js"
@@ -22,9 +23,9 @@ In this article we look at three critical system drivers (Snowy 2.0, wind build 
 
 Snowy 2.0's 2GW of pumped hydro storage requires approximately 27km of tunnels beneath the Snowy Mountains, and is reported to be more than 70% complete as of early 2026.
 
-The project's timeline is dictated by four tunnel boring machines (TBMs), the most recent of which appears to still be undergoing comissioning at the time of publishing.
+The project's timeline is dictated by four tunnel boring machines (TBMs), the most recent of which appears to still be undergoing commissioning at the time of publishing.
 
-We assessed the projected completion dates of each of the TBMs based on the long-run average tunnelling rates (metres/day) implied by press announcements over time and the remaining distance each TBM needs to cover. We then overlaid international benchmarks for time to operations after tunnelling completion (accounting for lining, electromechanical installation, wet commissioining).
+We assessed the projected completion dates of each of the TBMs based on the long-run average tunnelling rates (metres/day) implied by press announcements over time and the remaining distance each TBM needs to cover. We then overlaid international benchmarks for time to operations after tunnelling completion (accounting for lining, electromechanical installation, wet commissioning).
 
 {% plotlyChart "snowy-tbm-chart", "Snowy 2.0 TBM tunnelling progress" %}
 *Source: Snowy Hydro quarterly progress reports; Aber Analytics estimates*
@@ -41,13 +42,13 @@ We build a more realistic case:
 *Source: Clean Energy Council; AEMO draft 2026 ISP; Aber Analytics estimates* -->
 
 - Over the last five years, the NEM as a whole has averaged 1.3 GW per year of wind commissioning; implying build of **~5 GW** by 2030.
-- As of January 2026, there is only **4.4 GW** of new wind projects that have at least three out of five project committment markers (land, contracts, planning, finance, construction)<sup>2</sup>. Given the rate at which wind projects are delivered (e.g., recent project lifecycle in NSW has taken 10y+), we do not believe a significant amount of wind capacity that has not already reached this stage will be delivered by 2030.
+- As of January 2026, there is only **4.4 GW** of new wind projects that have at least three out of five project commitment markers (land, contracts, planning, finance, construction)<sup>2</sup>. Given the rate at which wind projects are delivered (e.g., recent project lifecycle in NSW has taken 10y+), we do not believe a significant amount of wind capacity that has not already reached this stage will be delivered by 2030.
 - 1GW of wind requires 160+ modern 6GW turbines. The complexities of delivering these from port to paddock (oversize road transports for several large components per day) means a delivery rate of 1-2 per week on a single route. Generously assuming 10 turbines could be delivered per week across the NEM - i.e. to five concurrent projects on diversified routes, we would be looking at an upper limit of **~3 GW annually**. This is unlikely to be the critical constraint pre-2030, but represents a reasonable medium-term upper limit for how quickly we can build wind capacity, even if we get planning and financing right.
 
-We believe it's reasonable to assume a maximum ~5 GW of new wind is built by 2030, less than half of the what the 2026 ISP calls for.
+We believe it's reasonable to assume a maximum ~5 GW of new wind is built by 2030, less than half of what the 2026 ISP calls for.
 
 
-## Transmission: How long is long?
+## Transmission: how long is long?
 
 As is well established, every major transmission project currently underway or planned in the NEM has experienced delays. Project EnergyConnect, the 900 km SA–NSW–VIC interconnector, is running approximately 3 years late. HumeLink, critical for connecting the South-West REZ and Snowy 2.0 to Sydney load, is 2 years behind its original timeline. VNI West, the new Victoria–NSW interconnector, has been pushed back 2 years. The Western Renewables Link in Victoria is 4 years delayed.
 
@@ -89,6 +90,6 @@ We believe the highest quality decisions require this kind of pragmatic view on 
 <div class="footnotes">
 <ol>
 <li id="fn1">AEMO, <em>Draft 2026 Integrated System Plan</em>, January 2026. The reduction from 42.6 GW to ~26 GW reflects updated capacity factor assumptions and revised demand forecasts. We used the Step Change scenario as the central reference. <a href="#fnref1">↩</a></li>
-<li id="fn1">AEMO, <em>NEM Generation Information</em>, January 2026. We have included projects shown as 'in commissioning' as part of the installed asset base. <a href="#fnref1">↩</a></li>
+<li id="fn2">AEMO, <em>NEM Generation Information</em>, January 2026. We have included projects shown as 'in commissioning' as part of the installed asset base. <a href="#fnref2">↩</a></li>
 </ol>
 </div>

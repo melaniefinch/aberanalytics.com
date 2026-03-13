@@ -5,6 +5,7 @@ author: "Aber Analytics"
 excerpt: "We modelled how different global energy system archetypes compare as they decarbonise. Australia comes out well — but its advantage depends on getting one critical infrastructure category right."
 layout: article.njk
 draft: false
+permalink: /insights/posts/australias-energy-cost-advantage/
 plotly: true
 tags: ["insights"]
 extraScripts:
@@ -33,11 +34,11 @@ For each archetype, we started from a current system and modelled the cost-optim
 
 Australia enters this analysis from a position of genuine structural advantage due to our abundant solar and wind resources, combined with relatively low-cost firming from gas peakers. In our standard scenario, Australia achieves 80% power system decarbonisation at a system cost roughly in line with the Asian archetype and approximately 7–17% below hydro-dominated, nuclear + renewables, and wind-dominant systems. 
 
-Widely sensitivity testing these results, we gained two surprising insights:
+Sensitivity testing these results widely, we found two surprising things:
 
-- **Demand shape does not change the answer**: we ran tests using various demand archetypes, with the hypothesis that significantly demand shapes (e.g., larger data centre or industrial share vs. a consumer-driven grid) would be best served by different power system mixes. We found surprisingly limited effects. The most cost effective Australian system consistently converges on a high renewables system with gas peaking and batteries.
+- **Demand shape does not change the answer**: we ran tests using various demand archetypes, with the hypothesis that significantly different demand shapes (e.g., larger data centre or industrial share vs. a consumer-driven grid) would be best served by different power system mixes. We found surprisingly limited effects. The most cost effective Australian system consistently converges on a high renewables system with gas peaking and batteries.
 
-- **Transmission cost is the swing factor**: sensitivity analysis showed Australia's annualised system cost varies by approximately 22% between low and high transmission cost assumptions. At the high end, our energy cost advantage narrows or disappears. The high end is unfortunately where recent project cost announcements sit, driven by the elivery delays we've explored in [previous analysis](/insights/posts/2026-03-05-physical-bottlenecks-in-the-energy-transition/)
+- **Transmission cost is the swing factor**: sensitivity analysis showed Australia's annualised system cost varies by approximately 22% between low and high transmission cost assumptions. At the high end, our energy cost advantage narrows or disappears. The high end is unfortunately where recent project cost announcements sit, driven by the delivery delays we've explored in [The devil is in the (delivery) details](/insights/posts/the-devil-is-in-the-delivery-details/)
 
 ## The strategy must evolve for the last 15%
 
