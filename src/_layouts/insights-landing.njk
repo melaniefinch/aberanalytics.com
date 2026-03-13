@@ -18,8 +18,9 @@ extraCss:
     <div class="container">
         <div class="insights-grid">
             {% for post in collections.insights %}
-            <a href="{{ post.url }}" class="insights-card reveal">
+            <a href="{{ post.url }}" class="insights-card reveal{% if post.data.draft %} insights-card--draft{% endif %}">
                 <div class="insights-card__body">
+                    {% if post.data.draft %}<span class="insights-card__draft-badge">Draft</span>{% endif %}
                     <h3 class="insights-card__title">{{ post.data.title }}</h3>
                     <p class="insights-card__excerpt">{{ post.data.excerpt }}</p>
                     {# <time class="insights-card__date">{{ post.date | readableDate }}</time> #}

@@ -103,6 +103,19 @@
     margin-bottom: 0.75rem;
 }
 
+.insights-card__draft-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--white);
+    background: #e08a00;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-bottom: 0.5rem;
+}
+
 .insights-card__title {
     font-size: 1.15rem;
     font-weight: 700;
