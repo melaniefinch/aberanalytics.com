@@ -9,40 +9,18 @@ tags: ["insights"]
 ---
 
 <div class="article-lede">
-<p><strong>Battery development starts the same way:</strong> find a site, secure a connection, and reach shovel-ready. Co-locating with an industrial offtaker changes the economics. It opens up value pools that a front-of-meter project cannot access, and capturing them depends on how the commercial arrangements are structured.</p>
+<p><strong>A battery sitting behind an industrial load can access value that grid-scale projects never will.</strong> The pipeline of grid-scale BESS in the NEM is enormous, and most of those projects are chasing the same revenue streams. As the fleet grows, the merchant case gets harder. The developers who outperform will be structuring projects differently. Co-locating behind the meter of an industrial consumer is one of the clearest ways to do that.</p>
 </div>
 
-A battery sitting behind an industrial load can access value that grid-scale projects never will. The pipeline of grid-scale BESS in the NEM is enormous, and most of those projects are chasing the same revenue streams. As the fleet grows, the merchant case gets harder. The developers who outperform will be structuring projects differently. Co-locating behind the meter of an industrial consumer is one of the clearest ways to do that.
+Across the NEM, industrial consumers are increasingly contracting battery offtake as a hedge against wholesale price exposure, to manage network tariff costs, or as part of a broader energy strategy. The projects co-located with those loads carry a larger value stack than a standard merchant development. Each layer of that stack requires its own contractual mechanism to access.
 
 ## Development fundamentals
 
 As a developer, every project comes down to the same two things: land and the work to get it built.
 
-**Land** is the opportunity cost of the site. For a greenfield project that means acquiring a suitable location and securing access to a grid connection point. An industrial host's comparison is the value of existing site access against the cost and lead time of starting a new connection from scratch.
+**Land** is the opportunity cost of the site. For an industrial host, the comparison is existing site access against the cost and lead time of a new connection from scratch.
 
-**Developer margin** is the value created through the development process: securing a grid connection agreement, obtaining development approvals, negotiating EPC arrangements, and arranging financing. A project at shovel-ready status commands a premium over raw development costs. The size of that premium depends on expected energy prices, the supply and demand for battery projects, and the cost of capital at the time of sale or financial close.
-
-<div class="value-bar-chart">
-
-<div class="value-bar value-bar--mini">
-<div class="value-bar__seg value-bar__seg--dev">Developer margin</div>
-<div class="value-bar__seg value-bar__seg--land">Land</div>
-</div>
-
-<div class="value-bar-legend">
-<div class="value-bar-legend__group">
-<div class="value-bar-legend__row">
-<span class="vb-dot vb-dot--dev"></span>
-<div><strong>Developer margin</strong><p>Market value of a ready-to-build project, influenced by expected future energy prices, the supply and demand for battery projects, and the cost of debt and equity at time of sale or financial close.</p></div>
-</div>
-<div class="value-bar-legend__row">
-<span class="vb-dot vb-dot--land"></span>
-<div><strong>Land</strong><p>Best next alternative for the site. For an industrial host, the relevant comparison is existing site access against the cost and lead time of securing a new grid connection from scratch.</p></div>
-</div>
-</div>
-</div>
-
-</div>
+**Developer margin** is the value created through the development process: connection agreements, development approvals, EPC arrangements, and financing. A project at shovel-ready status commands a premium over raw development costs, driven by expected energy prices and the cost of capital at financial close.
 
 ## Co-locating with an industrial load
 
@@ -127,21 +105,11 @@ When there is a willing offtaker with a large industrial load, additional value 
 })();
 </script>
 
-**Network tariff management** turns the site's TUOS exposure into an asset. Large industrial loads attract demand charges based on peak consumption. A co-located battery can reduce measured peak demand and lower the bill directly.
+Network tariffs, transmission losses, and congestion are value pools today. MLFs vary significantly by node, and congestion limits the dispatchable hours available to a standalone battery, sometimes preventing dispatch precisely when prices are highest. A co-located battery serving on-site load captures value from both without facing the same constraints.
 
-**Avoided transmission losses** bypass the MLF deductions that apply to energy moving through the transmission network. For sites at nodes with material loss factors, the saving is significant. Energy dispatched to on-site load avoids MLF deductions on the discharge side entirely.
+The outlook for both is likely to worsen. As more renewable generation connects at remote nodes, loss factors at those nodes tend to deteriorate. Transmission investment has historically lagged behind new connections. A standalone battery modelled on today's MLFs carries a structural headwind that compounds over a 15-year asset life. A BTM battery serving on-site load bypasses the transmission network on the output side, so its exposure to these changes is substantially lower.
 
-**Avoided congestion** removes the curtailment exposure that affects standalone batteries behind constrained transmission paths. A BTM battery dispatches to on-site load regardless of upstream conditions.
-
-**Energy market alpha**, for an industrial offtaker, converts wholesale price exposure into a more predictable energy cost rather than a merchant position to be managed.
-
-Each pool is worth modelling in dollar terms. Collectively, they also shift the risk profile of the project.
-
-MLFs can move materially over time. As variable renewable generation connects at remote nodes, loss factors at those nodes can deteriorate. A standalone battery's revenue projections depend on MLFs holding or improving. A BTM battery serving on-site load is partially insulated: energy dispatched on-site avoids MLF deductions on the discharge side regardless of how the network evolves.
-
-Congestion follows the same pattern. As the renewable fleet grows and transmission investment lags, constraints become more binding. A standalone battery behind a constrained path may be unable to dispatch when prices are highest. A co-located battery faces no such constraint on the discharge side.
-
-For an offtaker modelling energy costs over a 10 to 15 year contract horizon, these are structural considerations. The transmission network in 2035 will look materially different from today's, and BTM arrangements build in insulation from those changes from the outset.
+For an industrial offtaker, this matters in two directions. The BTM pools deliver returns today and provide insulation against network costs that are likely to increase.
 
 ## Splitting the value
 
