@@ -4,28 +4,22 @@ date: 2026-03-12
 author: "Aber Analytics"
 excerpt: "Most battery projects are competing for the same returns. Co-locating behind an industrial load is one of the clearest ways to access value that a standalone project won't see."
 layout: article.njk
-draft: true
+draft: false
 permalink: /insights/posts/sharing-the-load/
 tags: ["insights"]
 ---
 
 <div class="article-lede">
-<p><strong>A battery sitting behind an industrial load can access value that grid-scale projects never will.</strong> The pipeline of grid-scale BESS in the NEM is enormous, and most of those projects are chasing the same revenue streams. As the fleet grows, the merchant case gets harder. The developers who outperform will be structuring projects differently. Co-locating behind the meter of an industrial consumer is one of the clearest ways to do that.</p>
+<p><strong>A battery co-located behind an industrial load can access value pools that a standalone grid-scale project cannot.</strong> For the industrial consumer, that means lower energy costs and reduced wholesale exposure. For the battery developer, it means a higher margin ceiling than the merchant market alone provides. The same physical fact drives both: energy discharged on-site never touches the shared transmission network.</p>
 </div>
 
-Across the NEM, industrial consumers are increasingly contracting battery offtake as a hedge against wholesale price exposure, to manage network tariff costs, or as part of a broader energy strategy. The projects co-located with those loads carry a larger value stack than a standard merchant development. Each layer of that stack requires its own contractual mechanism to access.
+A standard front-of-meter battery project makes money in the wholesale energy market: charging when prices are low, discharging when they are high, and capturing ancillary services revenue along the way. Those returns are available to any grid-scale project, and are likely to compress as more batteries chase them.
 
-## Development fundamentals
+The value of a ready-to-build project to a developer is set by buyers' confidence in those returns: a function of the price outlook, cost of capital, and the revenue model underpinning the forecast.
 
-Land is the opportunity cost of the site. The more important input is **developer margin**: the premium a shovel-ready project commands over raw development costs.
+Behind-the-meter (BTM) batteries are located on the customer side of the network connection, sharing a grid connection with an industrial load. On top of the wholesale market revenue available to any grid-scale project, a BTM battery can access additional value pools. Who captures them depends on how the battery is operated and contracted.
 
-Securing a connection agreement, obtaining approvals, and arranging EPC and financing retire risk and move the project from concept to ready-to-build. The market at time of sale then determines what buyers will pay for the future revenue stream: expected energy prices and the cost of capital set the ceiling.
-
-For a standard merchant project, that ceiling tracks the wholesale market outlook. As the BESS fleet grows and spreads compress, buyers revise their return expectations down, and developer margin follows. A BTM arrangement adds value pools that sit outside the merchant stack, so the ceiling is higher and less dependent on how the merchant market evolves.
-
-## Co-locating with an industrial load
-
-When there is a willing offtaker with a large industrial load, additional value pools appear. Each one traces back to the same physical fact: the battery and the load share a grid connection, so energy discharged on-site never enters the shared transmission network.
+## Value pools available to a BTM battery
 
 <div class="value-bar-chart">
 
@@ -49,19 +43,19 @@ When there is a willing offtaker with a large industrial load, additional value 
 <div class="value-bar-legend__group-header vblg--btm">Additional value from BTM offtake</div>
 <div class="value-bar-legend__row" data-key="cong">
 <span class="vb-dot vb-dot--cong"></span>
-<div><strong>Avoided congestion</strong><p>A co-located battery serving on-site load dispatches regardless of upstream network conditions, capturing value in hours when standalone assets behind constrained transmission may be curtailed.</p></div>
+<div><strong>Avoided congestion</strong><p>A battery dispatching to on-site load is not constrained by upstream network limits, capturing value in hours when grid-scale assets may be prevented from exporting. For an industrial offtaker contracting supply from a standalone battery, congestion at the project's node is a delivery risk. A co-located battery eliminates it.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="loss">
 <span class="vb-dot vb-dot--loss"></span>
-<div><strong>Avoided transmission losses</strong><p>Marginal loss factors (MLFs) quantify the resistive losses incurred moving energy through the transmission network. Energy discharged to on-site load bypasses that network entirely, avoiding MLF-based deductions on both sides of the transaction.</p></div>
+<div><strong>Avoided transmission losses</strong><p>Energy discharged to the site bypasses the transmission network, avoiding the loss factor (MLF) deductions that reduce the effective revenue of grid-scale assets, increasing the value of each MWh discharged from the battery.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="tariff">
 <span class="vb-dot vb-dot--tariff"></span>
-<div><strong>Network tariff management</strong><p>TUOS demand charges are levied on peak consumption, and for a large industrial site they represent a material share of total energy costs. A co-located battery can discharge during demand peaks to reduce the site's measured demand and lower the bill directly.</p></div>
+<div><strong>Network tariff savings</strong><p>Large industrial sites often pay demand charges based on their peak consumption (TUOS). A co-located battery can reduce measured peak demand, reducing network tariffs or enabling additional loads.</p></div>
 </div>
 <div class="value-bar-legend__row" data-key="alpha">
 <span class="vb-dot vb-dot--alpha"></span>
-<div><strong>Energy market alpha</strong><p>For an industrial offtaker, a contracted battery can serve as a hedge against wholesale price exposure, converting spot risk into a more predictable energy cost. The value captured depends on the offtaker's view of the market and their tolerance for price risk.</p></div>
+<div><strong>Energy market alpha</strong><p>A contracted battery gives an industrial offtaker a hedge against wholesale price exposure. The value depends on the offtaker's view of future prices and their risk appetite, both of which can differ from the market consensus. An offtaker who expects high prices, or who places a premium on cost certainty, will value this hedge more than the spot market implies. The reverse is also true.</p></div>
 </div>
 </div>
 
@@ -106,25 +100,22 @@ When there is a willing offtaker with a large industrial load, additional value 
 })();
 </script>
 
-Network tariffs, transmission losses, and congestion are value pools today. MLFs vary significantly by node, and congestion limits the dispatchable hours available to a standalone battery, sometimes preventing dispatch precisely when prices are highest. A co-located battery serving on-site load captures value from both without facing the same constraints.
+The size of each pool varies by site. Loss factors differ by connection point and shift as the network evolves with new connections. Tariff structures vary across network businesses and tariff classes. How much peak shaving is achievable depends on the load profile, and the same battery capacity cannot always serve multiple value pools simultaneously: a battery committed to peak shaving may not be available for energy market dispatch in the same interval. Quantifying the stack for a specific site, and understanding how those pools interact, requires modelling it.
 
-A BTM battery serving on-site load bypasses the transmission network on the output side, which means its returns are largely insulated from how MLFs and congestion evolve at the site's node. A standalone battery's revenue projections depend on today's conditions holding across the full asset life.
+## If you're an industrial consumer
 
-With a large volume of new connections due to come onto the NEM, how those conditions change at specific nodes is genuinely uncertain. For an offtaker modelling energy costs over a long contract horizon, BTM arrangements reduce that exposure.
+Your load, connection, and land are assets in the battery development market. A developer co-locating a battery with your site gets access to value that a standalone project cannot replicate, which can give you negotiating leverage.
 
-## Splitting the value
+A well-structured BTM arrangement could reduce your energy costs in two ways: lower demand charges from peak shaving, and a hedge against wholesale price volatility if you have spot exposure. The size of those savings depends on your network tariff structure, your load profile, your view of future energy price distributions and how the contract is written.
 
-The exact realisation of each pool depends on site and offtake-specific conditions. Network tariff savings flow through the industrial host's energy bill, so accessing them requires an agreed mechanism for measuring and sharing those savings. Avoided losses depend on the host's MLF, which varies by node. Congestion avoidance accrues to whoever controls dispatch. Each pool requires a contractual structure to capture.
+Your involvement can range from passive to active. At one end, you lease the land and connection to a developer and take a fixed payment or a share of savings. At the other, you develop the battery directly, taking on the capital and the upside. Most arrangements sit somewhere in between, with the industrial host contributing site access and the developer contributing capital, connection work, and operational expertise. What share of the value you capture is a function of what you bring and how you negotiate.
 
-What the numbers look like for a specific site is a modelling question. Transmission loss factors differ by node, TUOS structures vary by network and tariff class, and load profiles determine how much peak shaving is achievable. The general principle holds across configurations, but the size of each pool and the appropriate sharing mechanism are site-specific.
+## If you're a battery developer
 
-## For industrial consumers
+Developer margin, the premium a ready-to-build project commands over development costs, is determined by the accepted market value of the project over its operational lifetime. For a merchant project, that expectation tracks the wholesale market outlook. As the BESS fleet grows and spreads compress, expected battery returns (and associated margins) are likely to soften.
 
-If you operate a large industrial site with a substantial grid connection, you have something battery developers want: your load, your connection, your land. A co-located battery will, in most configurations, reduce your energy costs and hedge your exposure to wholesale price volatility. What matters is what role you want to play and what share of the value you negotiate for.
-
-The options run from passive (lease the land, let someone else develop) to active (develop the battery directly). Each point on that spectrum involves a different capital commitment, risk profile, and capability requirement. Your industrial load creates battery project value that the wholesale market alone cannot provide.
+If a partnership with a large industrial load is possible, a BTM project accesses value pools that sit outside the traditional merchant stack. Congestion avoidance, network tariff savings, and avoided transmission losses do not compress as the BESS fleet grows because they are driven by network conditions and site-specific factors, not by how many batteries are chasing the same wholesale spread. How that additional value is split between developer and offtaker is a contract question, but the existence of it raises the margin ceiling on both sides of the deal.
 
 <div class="contact-cta">
-<p>Aber Analytics has experience modelling the value of BTM battery projects for large industrial loads, combining our power market price universes with BTM dispatch optimisation to quantify each value pool at the site level. <a href="mailto:info@aberanalytics.com">Get in touch</a> to discuss how co-location economics apply to your site or portfolio.</p>
+<p>Aber Analytics models the BTM value stack for industrial consumers and battery developers, combining power market price modelling with site-level dispatch optimisation to quantify each value pool. <a href="mailto:info@aberanalytics.com">Get in touch</a> for more information.</p>
 </div>
-
